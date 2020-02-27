@@ -35,20 +35,11 @@ public class GunBehaviour : MonoBehaviour
 		}
 	}
 
-	/// <summary>
-	/// When the gunstate is Collectable, the player can pick the weapon up.
-	/// When the player interacts with the weapon, it get's put onto the player weaponTransform.
-	/// </summary>
-	/// <param name="other"></param>
 	private void OnTriggerEnter(Collider other)
 	{
 		if(other.CompareTag("Player"))
 		{
-			transform.SetParent(other.GetComponent<PlayerBehaviour>().WeaponTransform);
-			transform.position = transform.parent.position;
-			transform.rotation = transform.parent.rotation;
-			gunState = GunState.Equiped;
-			Destroy(interactionCollider);
+			PickUp(other);
 		}
 	}
 
@@ -81,8 +72,17 @@ public class GunBehaviour : MonoBehaviour
 		{ }
 	}
 
-	private void PickUp()
+	/// <summary>
+	/// When the gunstate is Collectable, the player can pick the weapon up.
+	/// When the player interacts with the weapon, it get's put onto the player weaponTransform.
+	/// </summary>
+	/// <param name="other"></param>
+	private void PickUp(Collider other)
 	{
-
+		transform.SetParent(other.GetComponent<PlayerBehaviour>().WeaponTransform);
+		transform.position = transform.parent.position;
+		transform.rotation = transform.parent.rotation;
+		gunState = GunState.Equiped;
+		Destroy(interactionCollider);
 	}
 }
