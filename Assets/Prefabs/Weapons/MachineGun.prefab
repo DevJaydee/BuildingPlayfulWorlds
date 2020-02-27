@@ -55,6 +55,10 @@ MonoBehaviour:
   hitParticles: {fileID: 8617354624146884092, guid: 32fc83993edfba64bb243ff0b3012ef6,
     type: 3}
   fpsCam: {fileID: 0}
+  rotationVector: {x: 0, y: 1, z: 0}
+  rotationSpeed: 500
+  sinFrequency: 10
+  sinMagnitude: 0.5
 --- !u!65 &8752333129086586016
 BoxCollider:
   m_ObjectHideFlags: 0
