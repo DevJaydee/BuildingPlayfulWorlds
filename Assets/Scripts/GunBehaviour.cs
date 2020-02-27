@@ -17,8 +17,6 @@ public class GunBehaviour : MonoBehaviour
 	[Space]
 	[SerializeField] private Vector3 rotationVector = default; // Which direction the Weapon rotates.
 	[SerializeField] private float rotationSpeed = default; // How fast the Weapon rotates when it is in Collectable state.
-	[SerializeField] private float sinFrequency = default;  // The frequency of the sinus movement (How fast it "bobs" up and down).
-	[SerializeField] private float sinMagnitude = default;  // The magnitude of the sinus movement (How far it goes up and down).
 
 	private Vector3 pos = Vector3.zero; // Contains the pos of the player. Is only used for the Sinus movement.
 
@@ -41,10 +39,12 @@ public class GunBehaviour : MonoBehaviour
 				Shoot();
 			}
 		}
-		else // "Bob" up and down and rotate when the weapon is collectable.
+		else
 		{
-			transform.Rotate(rotationVector);
-			transform.position = pos + transform.up * Mathf.Sin(Time.time * sinFrequency) * sinMagnitude;
+			// Rotate the weapon to indicate it can be picked up
+		}
+		{
+			transform.Rotate(rotationVector * rotationSpeed * Time.deltaTime);
 		}
 	}
 
