@@ -35,6 +35,11 @@ public class GunBehaviour : MonoBehaviour
 		}
 	}
 
+	/// <summary>
+	/// When the gunstate is Collectable, the player can pick the weapon up.
+	/// When the player interacts with the weapon, it get's put onto the player weaponTransform.
+	/// </summary>
+	/// <param name="other"></param>
 	private void OnTriggerEnter(Collider other)
 	{
 		if(other.CompareTag("Player"))
