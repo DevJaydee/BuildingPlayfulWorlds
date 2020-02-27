@@ -14,12 +14,20 @@ public class GunBehaviour : MonoBehaviour
 	[SerializeField] private GameObject hitParticles;  // These are the particles that will showup on the surface that is hit.
 	[Space]
 	[SerializeField] private Camera fpsCam = default;   // A refernce to the Camera. The raycast will be shot from here.
+	[Space]
+	[SerializeField] private Vector3 rotationVector = default; // Which direction the Weapon rotates.
+	[SerializeField] private float rotationSpeed = default; // How fast the Weapon rotates when it is in Collectable state.
+	[SerializeField] private float sinFrequency = default;  // The frequency of the sinus movement (How fast it "bobs" up and down).
+	[SerializeField] private float sinMagnitude = default;  // The magnitude of the sinus movement (How far it goes up and down).
+
+	private Vector3 pos = Vector3.zero; // Contains the pos of the player. Is only used for the Sinus movement.
 
 	private void Awake()
 	{
 		fpsCam = Camera.main;
 		interactionCollider = GetComponent<BoxCollider>();
 		interactionCollider.isTrigger = true;
+		pos = transform.position;
 	}
 
 	private void Update()
@@ -32,6 +40,11 @@ public class GunBehaviour : MonoBehaviour
 			{
 				Shoot();
 			}
+		}
+		else // "Bob" up and down and rotate when the weapon is collectable.
+		{
+			transform.Rotate(rotationVector);
+			transform.position = pos + transform.up * Mathf.Sin(Time.time * sinFrequency) * sinMagnitude;
 		}
 	}
 
