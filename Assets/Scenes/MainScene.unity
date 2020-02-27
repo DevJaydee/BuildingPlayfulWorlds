@@ -1103,6 +1103,31 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7877823203038752334, guid: 8de6bf837718119499233016f0510b81,
+        type: 3}
+      propertyPath: rotationSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7877823203038752334, guid: 8de6bf837718119499233016f0510b81,
+        type: 3}
+      propertyPath: sinFrequency
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7877823203038752334, guid: 8de6bf837718119499233016f0510b81,
+        type: 3}
+      propertyPath: sinMagnitude
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7877823203038752334, guid: 8de6bf837718119499233016f0510b81,
+        type: 3}
+      propertyPath: rotationVector.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7877823203038752334, guid: 8de6bf837718119499233016f0510b81,
+        type: 3}
+      propertyPath: rotationVector.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7877823203038752335, guid: 8de6bf837718119499233016f0510b81,
         type: 3}
       propertyPath: m_Name
