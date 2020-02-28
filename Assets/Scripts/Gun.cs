@@ -89,7 +89,7 @@ public class Gun : MonoBehaviour
 	/// <param name="other"></param>
 	private void PickUp(Collider other)
 	{
-		transform.SetParent(other.GetComponent<PlayerBehaviour>().WeaponTransform);
+		transform.SetParent(other.GetComponent<Player>().WeaponTransform);
 		transform.position = transform.parent.position;
 		transform.rotation = transform.parent.rotation;
 		gunState = GunState.Equiped;
