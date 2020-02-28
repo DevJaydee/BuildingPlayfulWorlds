@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerCameraBehaviour : MonoBehaviour
+public class PlayerCamera : MonoBehaviour
 {
 	[SerializeField] private Transform playerBody = default;	// Transform of the playerbody
 	[Space]
