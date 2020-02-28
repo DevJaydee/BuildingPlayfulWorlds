@@ -5,11 +5,15 @@ using UnityEngine;
 public class Gun : MonoBehaviour
 {
 	private enum GunState { Collectable, Equiped };
+	private enum GunFireMode { Semi, FullAuto };
 	[SerializeField] private GunState gunState = GunState.Collectable;  // Dictates if the gun is collectable (In the world ready to be picked up) or already equiped by the player.
+	[SerializeField] private GunFireMode fireMode = GunFireMode.Semi;   // Dictates if the gun can shoot fullauto or not.
 	[SerializeField] private BoxCollider interactionCollider = default; // This is the collider that checks for trigger events. This collider will be deleted after interaction.
+	[SerializeField] private GunSwitching gunSwitching = default;       // Reference to the GunSwitching script.
 	[Space]
 	[SerializeField] private float damage = 10f;    // How much damage the gun does.
 	[SerializeField] private float range = 100f;    // How far the gun can shoot.
+	[SerializeField] private float fireRate = 1f;
 	[SerializeField] private LayerMask hitMask;     // What the gun can hit.
 	[SerializeField] private GameObject hitParticles;  // These are the particles that will showup on the surface that is hit.
 	[Space]
@@ -19,6 +23,7 @@ public class Gun : MonoBehaviour
 	[SerializeField] private float rotationSpeed = default; // How fast the Weapon rotates when it is in Collectable state.
 
 	private Vector3 pos = Vector3.zero; // Contains the pos of the player. Is only used for the Sinus movement.
+	private float fireRateCounter = 0;  // Contains the current time between shots.
 
 	private void Awake()
 	{
@@ -34,13 +39,20 @@ public class Gun : MonoBehaviour
 		{
 			transform.rotation = Camera.main.transform.rotation;
 			// Shoot when the player pressed their Left Mousebutton Down
-			if(Input.GetMouseButtonDown(0))
+			if(Input.GetButton("Fire1") && fireMode == GunFireMode.FullAuto && Time.time >= fireRateCounter)
+			{
+
+				fireRateCounter = Time.time + 1f / fireRate;
+				Shoot();
+
+			}
+			else if(Input.GetButtonDown("Fire1") && fireMode == GunFireMode.Semi)
 			{
 				Shoot();
 			}
 		}
 		else
-		{	// Rotate the weapon
+		{   // Rotate the weapon
 			transform.Rotate(rotationVector * rotationSpeed * Time.deltaTime);
 		}
 	}
@@ -50,11 +62,13 @@ public class Gun : MonoBehaviour
 		if(other.CompareTag("Player"))
 		{
 			PickUp(other);
+			gunSwitching = other.GetComponentInChildren<GunSwitching>();
+			gunSwitching.SelectWeapon();
 		}
 	}
 
 	/// <summary>
-	/// Shoots a raycast and then does some stuff.
+	/// Shoots a raycast and depending on the firemode it will shoot continious. Or when the player click the button again.
 	/// </summary>
 	public void Shoot()
 	{
@@ -64,7 +78,6 @@ public class Gun : MonoBehaviour
 			Debug.Log("Hit: " + hit.collider.name);
 			OnHitEvent(hit);
 		}
-
 	}
 
 	/// <summary>
