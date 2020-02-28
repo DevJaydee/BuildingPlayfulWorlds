@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerBehaviour : MonoBehaviour
+public class Player : MonoBehaviour
 {
 	#region Variables
 	[SerializeField] private string horizontalInputName = default;  // The Unity Input string for Horizontal Axis.
