@@ -17,6 +17,7 @@ public class GunSwitching : MonoBehaviour
 	private void Update()
 	{
 		GetMouseScrollInput();
+		GetKeyInputToSwitchWeapons();
 	}
 
 	private void GetMouseScrollInput()
@@ -32,11 +33,51 @@ public class GunSwitching : MonoBehaviour
 		}
 		if(Input.GetAxis("Mouse ScrollWheel") < 0f)
 		{
-			if(currentWeaponIndex <= transform.childCount - 1)
-				currentWeaponIndex = transform.childCount;
+			if(currentWeaponIndex <= 0)
+				currentWeaponIndex = transform.childCount - 1;
 			else
 				currentWeaponIndex--;
 		}
+
+		#region Keyboard weapon switching
+
+		if(Input.GetKey(KeyCode.Alpha1))
+		{
+			currentWeaponIndex = 0;
+		}
+		if(Input.GetKey(KeyCode.Alpha2) && transform.childCount >= 2)
+		{
+			currentWeaponIndex = 1;
+		}
+		if(Input.GetKey(KeyCode.Alpha3) && transform.childCount >= 2)
+		{
+			currentWeaponIndex = 2;
+		}
+		if(Input.GetKey(KeyCode.Alpha4) && transform.childCount >= 2)
+		{
+			currentWeaponIndex = 3;
+		}
+		if(Input.GetKey(KeyCode.Alpha5) && transform.childCount >= 2)
+		{
+			currentWeaponIndex = 4;
+		}
+		if(Input.GetKey(KeyCode.Alpha6) && transform.childCount >= 2)
+		{
+			currentWeaponIndex = 5;
+		}
+		if(Input.GetKey(KeyCode.Alpha7) && transform.childCount >= 2)
+		{
+			currentWeaponIndex = 6;
+		}
+		if(Input.GetKey(KeyCode.Alpha8) && transform.childCount >= 2)
+		{
+			currentWeaponIndex = 7;
+		}
+		if(Input.GetKey(KeyCode.Alpha9) && transform.childCount >= 2)
+		{
+			currentWeaponIndex = 8;
+		}
+		#endregion
 
 		if(previousWeaponIndex != currentWeaponIndex)
 		{
@@ -57,5 +98,10 @@ public class GunSwitching : MonoBehaviour
 
 			i++;
 		}
+	}
+
+	private void GetKeyInputToSwitchWeapons()
+	{
+
 	}
 }
