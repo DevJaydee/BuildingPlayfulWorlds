@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ButtonBehaviour : MonoBehaviour
+public class Button : MonoBehaviour
 {
 	private enum ButtonState
 	{
@@ -50,7 +50,7 @@ public class ButtonBehaviour : MonoBehaviour
 				break;
 		}
 
-		objectToTrigger.GetComponent<InteractableBehaviour>().StartTriggerEvent(triggered);
+		objectToTrigger.GetComponent<Interactable>().StartTriggerEvent(triggered);
 	}
 
 	private void OnApplicationQuit()
