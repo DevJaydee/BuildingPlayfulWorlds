@@ -40,10 +40,7 @@ public class GunBehaviour : MonoBehaviour
 			}
 		}
 		else
-		{
-			// Rotate the weapon to indicate it can be picked up
-		}
-		{
+		{	// Rotate the weapon
 			transform.Rotate(rotationVector * rotationSpeed * Time.deltaTime);
 		}
 	}
