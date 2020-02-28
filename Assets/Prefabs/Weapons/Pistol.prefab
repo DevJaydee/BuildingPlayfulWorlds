@@ -47,15 +47,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunState: 0
+  fireMode: 0
   interactionCollider: {fileID: 3053080563817076679}
-  damage: 34
+  gunSwitching: {fileID: 0}
+  damage: 35
   range: 1000
+  fireRate: 0
   hitMask:
     serializedVersion: 2
     m_Bits: 768
   hitParticles: {fileID: 8617354624146884092, guid: 32fc83993edfba64bb243ff0b3012ef6,
     type: 3}
   fpsCam: {fileID: 0}
+  rotationVector: {x: 0, y: 1, z: 0}
+  rotationSpeed: 100
 --- !u!65 &3053080563817076679
 BoxCollider:
   m_ObjectHideFlags: 0
