@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GunBehaviour : MonoBehaviour
+public class Gun : MonoBehaviour
 {
 	private enum GunState { Collectable, Equiped };
 	[SerializeField] private GunState gunState = GunState.Collectable;  // Dictates if the gun is collectable (In the world ready to be picked up) or already equiped by the player.
