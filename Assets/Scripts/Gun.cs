@@ -87,12 +87,12 @@ public class Gun : MonoBehaviour
 	{
 		Instantiate(hitParticles, hit.point, Quaternion.LookRotation(hit.normal));
 
-		if(hit.collider.CompareTag("Enemy"))
-		{
-			hit.collider.GetComponent<Enemy>().Health -= damage;
-		}
-		else if(hit.collider.CompareTag("Collidable"))
-		{ }
+		hit.collider.GetComponent<IDamagable>()?.Damage(damage);
+
+
+
+		//else if(hit.collider.CompareTag("Collidable"))
+		//{ }
 	}
 
 	/// <summary>
