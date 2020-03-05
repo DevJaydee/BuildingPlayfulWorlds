@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour, IDamagable
 {
 	#region Variables
 	[SerializeField] private float health = 100;    // The health of this enemy.
-	[SerializeField] private ParticleSystem onDeathParticles;   // The particles that spawn after an enemy dies.
+	[SerializeField] private ParticleSystem onDeathParticles = default;   // The particles that spawn after an enemy dies.
 	[Space]
 	[SerializeField] private Transform target = default;    // The target for this enemy. The enemy will try to destroy the target.
 	[SerializeField] private float targetDetectionRange = 35f;  // How far the enemy can "sense" the target. This works through walls atm
