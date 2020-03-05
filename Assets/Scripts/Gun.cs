@@ -14,8 +14,8 @@ public class Gun : MonoBehaviour
 	[SerializeField] private float damage = 10f;    // How much damage the gun does.
 	[SerializeField] private float range = 100f;    // How far the gun can shoot.
 	[SerializeField] private float fireRate = 1f;
-	[SerializeField] private LayerMask hitMask;     // What the gun can hit.
-	[SerializeField] private GameObject hitParticles;  // These are the particles that will showup on the surface that is hit.
+	[SerializeField] private LayerMask hitMask = default;     // What the gun can hit.
+	[SerializeField] private GameObject hitParticles = default;  // These are the particles that will showup on the surface that is hit.
 	[Space]
 	[SerializeField] private Camera fpsCam = default;   // A refernce to the Camera. The raycast will be shot from here.
 	[Space]
