@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour, IDamagable
 {
 	#region Variables
 	[SerializeField] private float health = 100;    // The health of this enemy.
@@ -81,6 +81,10 @@ public class Enemy : MonoBehaviour
 	{
 		Instantiate(onDeathParticles, transform.position, Quaternion.identity);
 		Destroy(gameObject);
+	}
+	public void Damage(float damageAmount)
+	{
+		health -= damageAmount;
 	}
 	#endregion
 
