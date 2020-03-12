@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Gun : MonoBehaviour
 {
-	private enum GunState { Collectable, Equiped };
+	private enum GunState { Collectable, Equiped, Reloading };
 	private enum GunFireMode { Semi, FullAuto };
 	[SerializeField] private GunState gunState = GunState.Collectable;  // Dictates if the gun is collectable (In the world ready to be picked up) or already equiped by the player.
 	[SerializeField] private GunFireMode fireMode = GunFireMode.Semi;   // Dictates if the gun can shoot fullauto or not.
@@ -16,6 +16,11 @@ public class Gun : MonoBehaviour
 	[SerializeField] private float fireRate = 1f;
 	[SerializeField] private LayerMask hitMask = default;     // What the gun can hit.
 	[SerializeField] private GameObject hitParticles = default;  // These are the particles that will showup on the surface that is hit.
+	[Space]
+	[SerializeField] private TMPro.TextMeshProUGUI currentAmmoText = default;   // TextMesh on the gun that indicates how much ammo is left.
+	[SerializeField] private int currentAmmo = 0;   // How much ammo is currently in the Gun (Magazine).
+	[SerializeField] private int maxAmmo = 30;  // How much ammo the gun could hold.
+	[SerializeField] private float reloadTime = 1;  // How long it will take to reload the gun.
 	[Space]
 	[SerializeField] private Camera fpsCam = default;   // A refernce to the Camera. The raycast will be shot from here.
 	[Space]
@@ -38,6 +43,10 @@ public class Gun : MonoBehaviour
 		if(gunState == GunState.Equiped)
 		{
 			transform.rotation = Camera.main.transform.rotation;
+
+			if(Input.GetKey(KeyCode.R))
+				StartCoroutine(Reload());
+
 			// Shoot when the player pressed their Left Mousebutton Down
 			if(Input.GetButton("Fire1") && fireMode == GunFireMode.FullAuto && Time.time >= fireRateCounter)
 			{
@@ -50,10 +59,13 @@ public class Gun : MonoBehaviour
 			{
 				Shoot();
 			}
+
+			currentAmmoText.text = currentAmmo + " / " + maxAmmo;
 		}
-		else
+		else if(gunState == GunState.Collectable)
 		{   // Rotate the weapon
 			transform.Rotate(rotationVector * rotationSpeed * Time.deltaTime);
+			currentAmmoText.enabled = false;
 		}
 	}
 
@@ -78,6 +90,19 @@ public class Gun : MonoBehaviour
 			Debug.Log("Hit: " + hit.collider.name);
 			OnHitEvent(hit);
 		}
+
+		currentAmmo--;
+		if(currentAmmo <= 0)
+			StartCoroutine(Reload());
+	}
+
+	private IEnumerator Reload()
+	{
+		gunState = GunState.Reloading;
+		currentAmmoText.text = "Reloading...";
+		yield return new WaitForSeconds(reloadTime);
+		currentAmmo = maxAmmo;
+		gunState = GunState.Equiped;
 	}
 
 	/// <summary>
@@ -106,6 +131,7 @@ public class Gun : MonoBehaviour
 		transform.position = transform.parent.position;
 		transform.rotation = transform.parent.rotation;
 		gunState = GunState.Equiped;
+		currentAmmoText.enabled = true;
 		Destroy(interactionCollider);
 	}
 }
