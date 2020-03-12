@@ -31,6 +31,7 @@ Transform:
   m_Children:
   - {fileID: 439201201874944800}
   - {fileID: 574970190014327538}
+  - {fileID: 6883206038835027137}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -58,7 +59,9 @@ MonoBehaviour:
     m_Bits: 768
   hitParticles: {fileID: 8617354624146884092, guid: 32fc83993edfba64bb243ff0b3012ef6,
     type: 3}
-  currentAmmoText: {fileID: 0}
+  muzzleFlash: {fileID: 1375467581206261656, guid: 41919574413d0214a8a6dc47390e0599,
+    type: 3}
+  muzzlePos: {fileID: 6883206038835027137}
   currentAmmo: 10
   maxAmmo: 10
   reloadTime: 1
@@ -107,6 +110,36 @@ Transform:
   m_Children: []
   m_Father: {fileID: 574970188804151514}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3094392417227904943
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6883206038835027137}
+  m_Layer: 9
+  m_Name: MuzzlePos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6883206038835027137
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3094392417227904943}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.285, z: 0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 574970188804151514}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &439201201874557348
 PrefabInstance:
