@@ -92,9 +92,15 @@ public class GunSwitching : MonoBehaviour
 		foreach(Transform weapon in transform)
 		{
 			if(i == currentWeaponIndex)
+			{
 				weapon.gameObject.SetActive(true);
+				weapon.GetComponent<Gun>().GunState = GunState.Equiped;
+			}
 			else
+			{
 				weapon.gameObject.SetActive(false);
+				weapon.GetComponent<Gun>().GunState = GunState.Stored;
+			}
 
 			i++;
 		}
