@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum GunState { Collectable, Equiped, Stored, Reloading };
+public enum GunFireMode { Semi, FullAuto };
 public class Gun : MonoBehaviour
 {
-	private enum GunState { Collectable, Equiped, Reloading };
-	private enum GunFireMode { Semi, FullAuto };
+	#region Varaiables
 	[SerializeField] private GunState gunState = GunState.Collectable;  // Dictates if the gun is collectable (In the world ready to be picked up) or already equiped by the player.
 	[SerializeField] private GunFireMode fireMode = GunFireMode.Semi;   // Dictates if the gun can shoot fullauto or not.
 	[SerializeField] private BoxCollider interactionCollider = default; // This is the collider that checks for trigger events. This collider will be deleted after interaction.
@@ -16,8 +17,9 @@ public class Gun : MonoBehaviour
 	[SerializeField] private float fireRate = 1f;
 	[SerializeField] private LayerMask hitMask = default;     // What the gun can hit.
 	[SerializeField] private GameObject hitParticles = default;  // These are the particles that will showup on the surface that is hit.
+	[SerializeField] private GameObject muzzleFlash = default;  // The Muzzleflash that will show when shooting.
+	[SerializeField] private Transform muzzlePos = default;     // Position of the muzzle of the weapon.
 	[Space]
-	[SerializeField] private TMPro.TextMeshProUGUI currentAmmoText = default;   // TextMesh on the gun that indicates how much ammo is left.
 	[SerializeField] private int currentAmmo = 0;   // How much ammo is currently in the Gun (Magazine).
 	[SerializeField] private int maxAmmo = 30;  // How much ammo the gun could hold.
 	[SerializeField] private float reloadTime = 1;  // How long it will take to reload the gun.
@@ -29,6 +31,13 @@ public class Gun : MonoBehaviour
 
 	private Vector3 pos = Vector3.zero; // Contains the pos of the player. Is only used for the Sinus movement.
 	private float fireRateCounter = 0;  // Contains the current time between shots.
+	#endregion
+
+	#region Getters and Setters
+	public int CurrentAmmo { get => currentAmmo; set => currentAmmo = value; }
+	public int MaxAmmo { get => maxAmmo; set => maxAmmo = value; }
+	public GunState GunState { get => gunState; set => gunState = value; }
+	#endregion
 
 	private void Awake()
 	{
@@ -44,7 +53,7 @@ public class Gun : MonoBehaviour
 		{
 			transform.rotation = Camera.main.transform.rotation;
 
-			if(Input.GetKey(KeyCode.R))
+			if(Input.GetKey(KeyCode.R) || currentAmmo <= 0)
 				StartCoroutine(Reload());
 
 			// Shoot when the player pressed their Left Mousebutton Down
@@ -59,13 +68,10 @@ public class Gun : MonoBehaviour
 			{
 				Shoot();
 			}
-
-			currentAmmoText.text = currentAmmo + " / " + maxAmmo;
 		}
 		else if(gunState == GunState.Collectable)
 		{   // Rotate the weapon
 			transform.Rotate(rotationVector * rotationSpeed * Time.deltaTime);
-			currentAmmoText.enabled = false;
 		}
 	}
 
@@ -84,6 +90,8 @@ public class Gun : MonoBehaviour
 	/// </summary>
 	public void Shoot()
 	{
+		ShowMuzzleFlash();
+
 		RaycastHit hit;
 		if(Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range, hitMask))
 		{
@@ -99,7 +107,6 @@ public class Gun : MonoBehaviour
 	private IEnumerator Reload()
 	{
 		gunState = GunState.Reloading;
-		currentAmmoText.text = "Reloading...";
 		yield return new WaitForSeconds(reloadTime);
 		currentAmmo = maxAmmo;
 		gunState = GunState.Equiped;
@@ -111,13 +118,7 @@ public class Gun : MonoBehaviour
 	private void OnHitEvent(RaycastHit hit)
 	{
 		Instantiate(hitParticles, hit.point, Quaternion.LookRotation(hit.normal));
-
 		hit.collider.GetComponent<IDamagable>()?.Damage(damage);
-
-
-
-		//else if(hit.collider.CompareTag("Collidable"))
-		//{ }
 	}
 
 	/// <summary>
@@ -131,7 +132,13 @@ public class Gun : MonoBehaviour
 		transform.position = transform.parent.position;
 		transform.rotation = transform.parent.rotation;
 		gunState = GunState.Equiped;
-		currentAmmoText.enabled = true;
+		GameManager.Instance.GetWeapons();
 		Destroy(interactionCollider);
+	}
+
+	private void ShowMuzzleFlash()
+	{
+		GameObject muzzleFlashGO = Instantiate(muzzleFlash, muzzlePos.position, transform.rotation, transform);
+		Destroy(muzzleFlashGO, 0.1f);
 	}
 }
