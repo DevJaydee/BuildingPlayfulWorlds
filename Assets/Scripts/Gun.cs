@@ -4,11 +4,13 @@ using UnityEngine;
 
 public enum GunState { Collectable, Equiped, Stored, Reloading };
 public enum GunFireMode { Semi, FullAuto };
+public enum GunType { Pistol, Rifle, Sniper, Silenced }
 public class Gun : MonoBehaviour
 {
 	#region Varaiables
 	[SerializeField] private GunState gunState = GunState.Collectable;  // Dictates if the gun is collectable (In the world ready to be picked up) or already equiped by the player.
 	[SerializeField] private GunFireMode fireMode = GunFireMode.Semi;   // Dictates if the gun can shoot fullauto or not.
+	[SerializeField] private GunType gunType = GunType.Pistol;          // Dictates what kind of sound this weapon makes.
 	[SerializeField] private BoxCollider interactionCollider = default; // This is the collider that checks for trigger events. This collider will be deleted after interaction.
 	[SerializeField] private GunSwitching gunSwitching = default;       // Reference to the GunSwitching script.
 	[Space]
@@ -28,6 +30,8 @@ public class Gun : MonoBehaviour
 	[Space]
 	[SerializeField] private Vector3 rotationVector = default; // Which direction the Weapon rotates.
 	[SerializeField] private float rotationSpeed = default; // How fast the Weapon rotates when it is in Collectable state.
+	[Space]
+	[SerializeField] private AudioSource source = default;  // AudioSource Component.
 
 	private Vector3 pos = Vector3.zero; // Contains the pos of the player. Is only used for the Sinus movement.
 	private float fireRateCounter = 0;  // Contains the current time between shots.
@@ -91,6 +95,7 @@ public class Gun : MonoBehaviour
 	public void Shoot()
 	{
 		ShowMuzzleFlash();
+		PlayAudio();
 
 		RaycastHit hit;
 		if(Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range, hitMask))
@@ -140,5 +145,11 @@ public class Gun : MonoBehaviour
 	{
 		GameObject muzzleFlashGO = Instantiate(muzzleFlash, muzzlePos.position, transform.rotation, transform);
 		Destroy(muzzleFlashGO, 0.1f);
+	}
+
+	private void PlayAudio()
+	{
+		AudioMaster.Instance.PlayWeaponSound(source, gunType);
+		source.PlayOneShot(source.clip);
 	}
 }
