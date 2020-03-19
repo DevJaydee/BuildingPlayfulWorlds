@@ -261,11 +261,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4352874349907981867, guid: a7ef617ea9981de4f9dc3f88e0267688,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.75
+      objectReference: {fileID: 0}
     - target: {fileID: 5960344018269831956, guid: a7ef617ea9981de4f9dc3f88e0267688,
         type: 3}
       propertyPath: playerBody
       value: 
       objectReference: {fileID: 5960344019058400054}
+    - target: {fileID: 5960344018269831956, guid: a7ef617ea9981de4f9dc3f88e0267688,
+        type: 3}
+      propertyPath: mouseSensitivity
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7ef617ea9981de4f9dc3f88e0267688, type: 3}
 --- !u!4 &6084497157774415978 stripped
