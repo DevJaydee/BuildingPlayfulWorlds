@@ -45,8 +45,8 @@ public class GameManager : MonoBehaviour
 
 	private void Update()
 	{
-		if(Input.GetKeyDown(pauseMenuKey))
-			TriggerPauseMenu();
+		//if(Input.GetKeyDown(pauseMenuKey))
+		//	TriggerPauseMenu();
 	}
 
 	private void GetComponents()
