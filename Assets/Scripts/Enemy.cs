@@ -18,6 +18,8 @@ public class Enemy : MonoBehaviour, IDamagable
 	[SerializeField] private NavMeshAgent navMeshAgent = default;   // Reference to the navMeshAgent component.
 	[Space]
 	[SerializeField] private Animator anim = default;   // Reference to the animator component;
+	[Space]
+	[SerializeField] private AudioSource source = default;  // Audiosource component.
 	#endregion
 
 	#region States
@@ -57,6 +59,8 @@ public class Enemy : MonoBehaviour, IDamagable
 		navMeshAgent.stoppingDistance = targetEngagementRange;
 
 		behaviourSM.Initialize(searching);
+
+		StartCoroutine(PlayWalkAudio());
 	}
 
 	private void Update()
@@ -85,6 +89,22 @@ public class Enemy : MonoBehaviour, IDamagable
 	public void Damage(float damageAmount)
 	{
 		health -= damageAmount;
+	}
+
+	private IEnumerator PlayWalkAudio()
+	{
+		while(true)
+		{
+			if(behaviourSM.CurrentState == walking)
+			{
+				AudioMaster.Instance.PlayWalkSound(source);
+				yield return new WaitForSeconds(0.5f);
+			}
+			else
+			{
+				yield return null;
+			}
+		}
 	}
 	#endregion
 
