@@ -1,0 +1,187 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2903569058601882060
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2903569058601882063}
+  - component: {fileID: 2903569058601882057}
+  - component: {fileID: 2903569058601882062}
+  m_Layer: 0
+  m_Name: UziLongSilencer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2903569058601882063
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2903569058601882060}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -6, y: 1.25, z: 4.75}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 2903569057397532381}
+  - {fileID: 2903569058937965685}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2903569058601882057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2903569058601882060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6933d1589304a324a89f5d2c7dc13d73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunState: 0
+  fireMode: 1
+  interactionCollider: {fileID: 2903569058601882062}
+  gunSwitching: {fileID: 0}
+  damage: 10
+  range: 100
+  fireRate: 20
+  hitMask:
+    serializedVersion: 2
+    m_Bits: 512
+  hitParticles: {fileID: 8617354624146884092, guid: 32fc83993edfba64bb243ff0b3012ef6,
+    type: 3}
+  muzzleFlash: {fileID: 1375467581206261656, guid: 41919574413d0214a8a6dc47390e0599,
+    type: 3}
+  muzzlePos: {fileID: 2903569058937965685}
+  currentAmmo: 25
+  maxAmmo: 25
+  reloadTime: 1
+  fpsCam: {fileID: 0}
+  rotationVector: {x: 0, y: 1, z: 0}
+  rotationSpeed: 100
+--- !u!65 &2903569058601882062
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2903569058601882060}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 2.0946498}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &2903569058937965690
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2903569058937965685}
+  m_Layer: 0
+  m_Name: MuzzlePosUzi
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2903569058937965685
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2903569058937965690}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.329, z: 0.997}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2903569058601882063}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &2903569057397144663
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2903569058601882063}
+    m_Modifications:
+    - target: {fileID: 100010, guid: 1ebda001864631e45b6719aa437174a6, type: 3}
+      propertyPath: m_Name
+      value: uziLongSilencer
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: 1ebda001864631e45b6719aa437174a6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: 1ebda001864631e45b6719aa437174a6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: 1ebda001864631e45b6719aa437174a6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: 1ebda001864631e45b6719aa437174a6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: 1ebda001864631e45b6719aa437174a6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: 1ebda001864631e45b6719aa437174a6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: 1ebda001864631e45b6719aa437174a6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: 1ebda001864631e45b6719aa437174a6, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: 1ebda001864631e45b6719aa437174a6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: 1ebda001864631e45b6719aa437174a6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: 1ebda001864631e45b6719aa437174a6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: 1ebda001864631e45b6719aa437174a6, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: 1ebda001864631e45b6719aa437174a6, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: 1ebda001864631e45b6719aa437174a6, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 20
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1ebda001864631e45b6719aa437174a6, type: 3}
+--- !u!4 &2903569057397532381 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400010, guid: 1ebda001864631e45b6719aa437174a6,
+    type: 3}
+  m_PrefabInstance: {fileID: 2903569057397144663}
+  m_PrefabAsset: {fileID: 0}
