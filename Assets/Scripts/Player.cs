@@ -2,9 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum PlayerState
+{
+	Idle,
+	Walking
+}
+
 public class Player : MonoBehaviour
 {
 	#region Variables
+	[SerializeField] private PlayerState state = PlayerState.Idle;
+	[Space]
 	[SerializeField] private string horizontalInputName = default;  // The Unity Input string for Horizontal Axis.
 	[SerializeField] private string verticalInputName = default;    // The Unity Input string for Vertical Axis.
 
@@ -23,9 +31,10 @@ public class Player : MonoBehaviour
 	[Space]
 	[SerializeField] private KeyCode jumpKey = default; // The key which the player has to press to jump.
 	[Space]
-	[SerializeField] private Transform weaponTransform = default;	// The transform for the weapon.
+	[SerializeField] private Transform weaponTransform = default;   // The transform for the weapon.
+	[Space]
+	[SerializeField] private AudioSource source = default;      // AudioSource Component.
 	private CharacterController charController = default;   // The Character controller variable.
-
 	#endregion
 
 	#region Getters and Setters
@@ -45,6 +54,11 @@ public class Player : MonoBehaviour
 		PlayerMovement();
 	}
 
+	private void Start()
+	{
+		StartCoroutine(PlayWalkAudio());
+	}
+
 	/// <summary>
 	/// Get's the player input and makes the Character move.
 	/// </summary>
@@ -58,8 +72,13 @@ public class Player : MonoBehaviour
 
 		charController.SimpleMove(Vector3.ClampMagnitude(forwardMovement + rightMovement, 1f) * movementSpeed);
 
-		if ((verInput != 0f || horInput != 0f) && OnSlope())
+		if((verInput != 0f || horInput != 0f) && OnSlope())
 			charController.Move(Vector3.down * charController.height / 2f * slopeForce * Time.deltaTime);
+
+		if(charController.velocity == Vector3.zero)
+			state = PlayerState.Idle;
+		else
+			state = PlayerState.Walking;
 
 		SetMovementSpeed();
 		JumpInput();
@@ -70,7 +89,7 @@ public class Player : MonoBehaviour
 	/// </summary>
 	private void SetMovementSpeed()
 	{
-		if (Input.GetKey(runKey))
+		if(Input.GetKey(runKey))
 			movementSpeed = Mathf.Lerp(movementSpeed, runSpeed, Time.deltaTime * runBuildUpSpeed);
 		else
 			movementSpeed = Mathf.Lerp(movementSpeed, walkSpeed, Time.deltaTime * runBuildUpSpeed);
@@ -81,7 +100,7 @@ public class Player : MonoBehaviour
 	/// </summary>
 	private void JumpInput()
 	{
-		if (Input.GetKeyDown(jumpKey) && !isJumping)
+		if(Input.GetKeyDown(jumpKey) && !isJumping)
 		{
 			isJumping = true;
 			StartCoroutine(JumpEvent());
@@ -102,7 +121,7 @@ public class Player : MonoBehaviour
 			charController.Move(Vector3.up * jumpForce * jumpMultiplier * Time.deltaTime);
 			timeInAir += Time.deltaTime;
 			yield return null;
-		} while (!charController.isGrounded && charController.collisionFlags != CollisionFlags.Above);
+		} while(!charController.isGrounded && charController.collisionFlags != CollisionFlags.Above);
 		charController.slopeLimit = 45f;
 		isJumping = false;
 	}
@@ -113,13 +132,29 @@ public class Player : MonoBehaviour
 	/// <returns></returns>
 	private bool OnSlope()
 	{
-		if (isJumping)
+		if(isJumping)
 			return false;
 
 		RaycastHit hit;
-		if (Physics.Raycast(transform.position, Vector3.down, out hit, charController.height / 2f * slopeForceRayLength))
-			if (hit.normal != Vector3.up)
+		if(Physics.Raycast(transform.position, Vector3.down, out hit, charController.height / 2f * slopeForceRayLength))
+			if(hit.normal != Vector3.up)
 				return true;
 		return false;
+	}
+
+	private IEnumerator PlayWalkAudio()
+	{
+		while(true)
+		{
+			if(state == PlayerState.Walking)
+			{
+				AudioMaster.Instance.PlayWalkSound(source);
+				yield return new WaitForSeconds(0.5f);
+			}
+			else
+			{
+				yield return null;
+			}
+		}
 	}
 }
