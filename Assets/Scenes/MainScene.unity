@@ -772,6 +772,34 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 495845717}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &185062820 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5920086071919463780, guid: 50bea87b0ec572d428da10bd7a23b6c4,
+    type: 3}
+  m_PrefabInstance: {fileID: 5920086073135083914}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &185062821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 185062820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 972888676eb6587469b7ffb3d31c1a79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundWalkAudioClips:
+  - {fileID: 8300000, guid: 0ab130905a0bcbc48bccbfe2cc34cc60, type: 3}
+  - {fileID: 8300000, guid: a0daebfd9a7bc244eadd2f6f1d73b578, type: 3}
+  - {fileID: 8300000, guid: dbe35cd831c9115458874589bd4afe6c, type: 3}
+  - {fileID: 8300000, guid: eebe2f8015f6d0f4c9d8745755faa3bf, type: 3}
+  - {fileID: 8300000, guid: fe37c64fd8cff9f4592cf18e17b9e476, type: 3}
+  PistolAudio: {fileID: 8300000, guid: 9ada9fc9a0fc0c7408a3fd6667cf5c69, type: 3}
+  RifleAudio: {fileID: 8300000, guid: ceb401cd17c54ea46960b3aa72066f59, type: 3}
+  SniperAudio: {fileID: 8300000, guid: e080884ea58c8ba4683d0c629675afe2, type: 3}
+  SilencedAudio: {fileID: 8300000, guid: 97869e73985dbcb4a89f8b0775995757, type: 3}
 --- !u!1001 &193997808
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1372,6 +1400,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1060797713}
     m_Modifications:
+    - target: {fileID: 5231635184640240229, guid: 11bbdcc4f7ee28c4e8438de9872fa6da,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5231635184640240229, guid: 11bbdcc4f7ee28c4e8438de9872fa6da,
+        type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5960344019058400054, guid: 11bbdcc4f7ee28c4e8438de9872fa6da,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4777,7 +4815,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 5920086073135083914}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 185062820}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6ccbaa037df833042990495e60e0b1c9, type: 3}
