@@ -33,6 +33,8 @@ public class Player : MonoBehaviour
 	[Space]
 	[SerializeField] private Transform weaponTransform = default;   // The transform for the weapon.
 	[Space]
+	[SerializeField] private GameObject grenadePrefab = default;    // Prefab of the grenade
+	[Space]
 	[SerializeField] private AudioSource source = default;      // AudioSource Component.
 	private CharacterController charController = default;   // The Character controller variable.
 	#endregion
@@ -41,6 +43,7 @@ public class Player : MonoBehaviour
 	public Transform WeaponTransform { get => weaponTransform; set => weaponTransform = value; }
 	#endregion
 
+	#region Monobehaviour Callbacks
 	/// <summary>
 	/// Get the Character Controller
 	/// </summary>
@@ -52,13 +55,18 @@ public class Player : MonoBehaviour
 	private void Update()
 	{
 		PlayerMovement();
+
+		if(Input.GetKeyDown(KeyCode.G))
+			ThrowGrenade();
 	}
 
 	private void Start()
 	{
 		StartCoroutine(PlayWalkAudio());
 	}
+	#endregion
 
+	#region Moving
 	/// <summary>
 	/// Get's the player input and makes the Character move.
 	/// </summary>
@@ -95,6 +103,24 @@ public class Player : MonoBehaviour
 			movementSpeed = Mathf.Lerp(movementSpeed, walkSpeed, Time.deltaTime * runBuildUpSpeed);
 	}
 
+	private IEnumerator PlayWalkAudio()
+	{
+		while(true)
+		{
+			if(state == PlayerState.Walking)
+			{
+				AudioMaster.Instance.PlayWalkSound(source);
+				yield return new WaitForSeconds(0.5f);
+			}
+			else
+			{
+				yield return null;
+			}
+		}
+	}
+	#endregion
+
+	#region Jumping
 	/// <summary>
 	/// Checks for user input to jump. Then triggers said jump event.
 	/// </summary>
@@ -125,7 +151,9 @@ public class Player : MonoBehaviour
 		charController.slopeLimit = 45f;
 		isJumping = false;
 	}
+	#endregion
 
+	#region Charactercontroller Physics
 	/// <summary>
 	/// Checks if the players is on a slope.
 	/// </summary>
@@ -141,20 +169,14 @@ public class Player : MonoBehaviour
 				return true;
 		return false;
 	}
+	#endregion
 
-	private IEnumerator PlayWalkAudio()
+	#region Grenade Throwing
+	private void ThrowGrenade()
 	{
-		while(true)
-		{
-			if(state == PlayerState.Walking)
-			{
-				AudioMaster.Instance.PlayWalkSound(source);
-				yield return new WaitForSeconds(0.5f);
-			}
-			else
-			{
-				yield return null;
-			}
-		}
+		GameObject newGrenadeGO = Instantiate(grenadePrefab, Camera.main.transform.position, Camera.main.transform.rotation);
+		Grenade grenadeComp = newGrenadeGO.GetComponent<Grenade>();
+		newGrenadeGO.GetComponent<Rigidbody>().AddForce(newGrenadeGO.transform.forward * grenadeComp.ThrowForce, ForceMode.VelocityChange);
 	}
+	#endregion
 }
