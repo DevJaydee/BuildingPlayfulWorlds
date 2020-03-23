@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5960344018562668386}
   - component: {fileID: 5960344018562668387}
   - component: {fileID: 5960344018562668384}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Graphic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: 5960344019058400056}
   - component: {fileID: 7502384960742732454}
   - component: {fileID: 5231635184640240229}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -196,6 +196,9 @@ MonoBehaviour:
   jumpMultiplier: 5
   jumpKey: 32
   weaponTransform: {fileID: 7644350574918724462}
+  grenadePrefab: {fileID: 8669418968962003798, guid: ef7d7fce96f4d474baf9af2ea921850e,
+    type: 3}
+  grenadeComp: {fileID: 0}
   source: {fileID: 5231635184640240229}
 --- !u!82 &5231635184640240229
 AudioSource:
@@ -305,6 +308,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Camera
       objectReference: {fileID: 0}
+    - target: {fileID: 148281914103252259, guid: a7ef617ea9981de4f9dc3f88e0267688,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 148281914103252271, guid: a7ef617ea9981de4f9dc3f88e0267688,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -359,6 +367,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3813744794257703676, guid: a7ef617ea9981de4f9dc3f88e0267688,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4352874349907981867, guid: a7ef617ea9981de4f9dc3f88e0267688,
         type: 3}
