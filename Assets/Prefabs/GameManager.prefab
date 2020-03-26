@@ -46,6 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameState: 0
   hud: {fileID: 0}
+  uiFadeIn: {fileID: 0}
   playerObject: {fileID: 0}
   player: {fileID: 0}
   playerCamera: {fileID: 0}
@@ -54,7 +55,7 @@ MonoBehaviour:
   playerActiveWeapon: {fileID: 0}
   pauseMenuKey: 27
   pauseMenuObject: {fileID: 0}
-  pauseMenuEnableb: 0
+  pauseMenuEnabled: 0
 --- !u!114 &185062821
 MonoBehaviour:
   m_ObjectHideFlags: 0
