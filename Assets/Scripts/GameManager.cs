@@ -1,13 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using TMPro;
+using UnityEngine;
+
+public enum GameState
+{
+	Playing,
+	Paused
+}
 
 public class GameManager : MonoBehaviour
 {
 	#region Variables
 	private static GameManager instance = null; // Instance of this object. or rather, this instance.
 
+	[SerializeField] private GameState gameState = GameState.Playing;   // State of the game
+	[Space]
 	[SerializeField] private HUD hud = default;     // Reference to the HUD component.
 	[Space]
 	[SerializeField] private GameObject playerObject = default; // Reference to the player GameObject.
@@ -27,6 +35,7 @@ public class GameManager : MonoBehaviour
 	public GameObject PlayerObject { get => playerObject; set => playerObject = value; }
 	public Player Player { get => player; set => player = value; }
 	public HUD Hud { get => hud; set => hud = value; }
+	public GameState GameState { get => gameState; set => gameState = value; }
 	#endregion
 
 	private void Awake()
@@ -45,8 +54,8 @@ public class GameManager : MonoBehaviour
 
 	private void Update()
 	{
-		//if(Input.GetKeyDown(pauseMenuKey))
-		//	TriggerPauseMenu();
+		if(Input.GetKeyDown(pauseMenuKey))
+			TriggerPauseMenu();
 	}
 
 	private void GetComponents()
@@ -100,8 +109,10 @@ public class GameManager : MonoBehaviour
 		pauseMenuEnableb = !pauseMenuEnableb;
 
 		Time.timeScale = pauseMenuEnableb ? 0f : 1f;
+		gameState = Time.timeScale == 0 ? GameState.Paused : GameState.Playing;
+
 		pauseMenuObject.SetActive(pauseMenuEnableb);
-		playerCamera.LockCursor(pauseMenuEnableb);
+		playerCamera.LockCursor(!pauseMenuEnableb);
 	}
 	#endregion
 }
