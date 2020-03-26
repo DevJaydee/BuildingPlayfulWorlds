@@ -53,29 +53,32 @@ public class Gun : MonoBehaviour
 
 	private void Update()
 	{
-		if(gunState == GunState.Equiped)
+		if(GameManager.Instance.GameState == GameState.Playing)
 		{
-			transform.rotation = Camera.main.transform.rotation;
-
-			if(Input.GetKey(KeyCode.R) || currentAmmo <= 0)
-				StartCoroutine(Reload());
-
-			// Shoot when the player pressed their Left Mousebutton Down
-			if(Input.GetButton("Fire1") && fireMode == GunFireMode.FullAuto && Time.time >= fireRateCounter)
+			if(gunState == GunState.Equiped)
 			{
+				transform.rotation = Camera.main.transform.rotation;
 
-				fireRateCounter = Time.time + 1f / fireRate;
-				Shoot();
+				if(Input.GetKey(KeyCode.R) || currentAmmo <= 0)
+					StartCoroutine(Reload());
 
+				// Shoot when the player pressed their Left Mousebutton Down
+				if(Input.GetButton("Fire1") && fireMode == GunFireMode.FullAuto && Time.time >= fireRateCounter)
+				{
+
+					fireRateCounter = Time.time + 1f / fireRate;
+					Shoot();
+
+				}
+				else if(Input.GetButtonDown("Fire1") && fireMode == GunFireMode.Semi)
+				{
+					Shoot();
+				}
 			}
-			else if(Input.GetButtonDown("Fire1") && fireMode == GunFireMode.Semi)
-			{
-				Shoot();
+			else if(gunState == GunState.Collectable)
+			{   // Rotate the weapon
+				transform.Rotate(rotationVector * rotationSpeed * Time.deltaTime);
 			}
-		}
-		else if(gunState == GunState.Collectable)
-		{   // Rotate the weapon
-			transform.Rotate(rotationVector * rotationSpeed * Time.deltaTime);
 		}
 	}
 
