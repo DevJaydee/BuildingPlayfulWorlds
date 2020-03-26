@@ -20,6 +20,10 @@ public class Enemy : MonoBehaviour, IDamagable
 	[SerializeField] private Animator anim = default;   // Reference to the animator component;
 	[Space]
 	[SerializeField] private AudioSource source = default;  // Audiosource component.
+	[Space]
+	[SerializeField] private float minTimeBetweenAudio = 10f;   // Minimum time between audio clips.
+	[SerializeField] private float maxTimeBetweenAudio = 30f;   // Macimum time between audio clips.
+	[SerializeField] private float timeBetweenAudio = default;  // Time between audio clips
 	#endregion
 
 	#region States
@@ -56,11 +60,14 @@ public class Enemy : MonoBehaviour, IDamagable
 		walking = new EnemyWalkingState(this, behaviourSM);
 		shooting = new EnemyShootingState(this, behaviourSM);
 
+		timeBetweenAudio = Random.Range(0.5f, 3f);
+
 		navMeshAgent.stoppingDistance = targetEngagementRange;
 
 		behaviourSM.Initialize(searching);
 
 		StartCoroutine(PlayWalkAudio());
+		StartCoroutine(PlayGrowlAudio());
 	}
 
 	private void Update()
@@ -70,6 +77,8 @@ public class Enemy : MonoBehaviour, IDamagable
 
 		if(health <= 0)
 			OnDeathEvent();
+
+		if(GameManager.Instance.GameState == GameState.Paused) source.Pause(); else source.UnPause();
 
 		anim.SetFloat("MovementSpeed", (navMeshAgent.velocity).magnitude);
 	}
@@ -104,6 +113,16 @@ public class Enemy : MonoBehaviour, IDamagable
 			{
 				yield return null;
 			}
+		}
+	}
+
+	private IEnumerator PlayGrowlAudio()
+	{
+		while(true)
+		{
+			yield return new WaitForSeconds(timeBetweenAudio);
+			AudioMaster.Instance.PlayZombieGrowl(source);
+			timeBetweenAudio = Random.Range(minTimeBetweenAudio, maxTimeBetweenAudio);
 		}
 	}
 	#endregion

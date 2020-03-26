@@ -67,6 +67,8 @@ public class Player : MonoBehaviour
 
 		if(Input.GetKeyDown(KeyCode.G))
 			ThrowGrenade();
+
+		if(GameManager.Instance.GameState == GameState.Paused) source.Pause(); else source.UnPause();
 	}
 
 	private void Start()

@@ -6,7 +6,10 @@ public class AudioMaster : MonoBehaviour
 {
 	#region Variables
 	private static AudioMaster instance = null; // Instance of this
+	[Header("Ground Walking Sounds")]
 	[SerializeField] private AudioClip[] groundWalkAudioClips = default;    // Array with all the ground walk audio clips.
+	[Header("Zombie Growls")]
+	[SerializeField] private AudioClip[] zombieGrowls = default;            // Array with zombie Growls
 	[Header("Weapon Sounds")]
 	[SerializeField] private AudioClip PistolAudio = default;       // Audio clip for the pistol.
 	[SerializeField] private AudioClip RifleAudio = default;        // Audio clip for the Rifle.
@@ -30,6 +33,14 @@ public class AudioMaster : MonoBehaviour
 		int i = Random.Range(0, groundWalkAudioClips.Length);
 		source.clip = groundWalkAudioClips[i];
 		source.PlayOneShot(source.clip);
+	}
+
+	public void PlayZombieGrowl(AudioSource source)
+	{
+		int i = Random.Range(0, zombieGrowls.Length);
+		source.clip = zombieGrowls[i];
+		source.PlayOneShot(source.clip);
+
 	}
 
 	public void PlayWeaponSound(AudioSource source, GunType type)

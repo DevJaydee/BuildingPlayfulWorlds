@@ -46,6 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameState: 0
   hud: {fileID: 0}
+  uiFadeIn: {fileID: 0}
   playerObject: {fileID: 0}
   player: {fileID: 0}
   playerCamera: {fileID: 0}
@@ -54,7 +55,7 @@ MonoBehaviour:
   playerActiveWeapon: {fileID: 0}
   pauseMenuKey: 27
   pauseMenuObject: {fileID: 0}
-  pauseMenuEnableb: 0
+  pauseMenuEnabled: 0
 --- !u!114 &185062821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -73,6 +74,12 @@ MonoBehaviour:
   - {fileID: 8300000, guid: dbe35cd831c9115458874589bd4afe6c, type: 3}
   - {fileID: 8300000, guid: eebe2f8015f6d0f4c9d8745755faa3bf, type: 3}
   - {fileID: 8300000, guid: fe37c64fd8cff9f4592cf18e17b9e476, type: 3}
+  zombieGrowls:
+  - {fileID: 8300000, guid: 6563606cfec7d14448690cdb1255e041, type: 3}
+  - {fileID: 8300000, guid: b34d6c895c34f184dbb264b07dc01031, type: 3}
+  - {fileID: 8300000, guid: eaadf712a418b724897b6f661af4097e, type: 3}
+  - {fileID: 8300000, guid: fd5f208d382b20e40b2ba117bef9c12d, type: 3}
+  - {fileID: 8300000, guid: 439c408c0f531d14d9136d0a7a9a84ac, type: 3}
   PistolAudio: {fileID: 8300000, guid: 9ada9fc9a0fc0c7408a3fd6667cf5c69, type: 3}
   RifleAudio: {fileID: 8300000, guid: ceb401cd17c54ea46960b3aa72066f59, type: 3}
   SniperAudio: {fileID: 8300000, guid: e080884ea58c8ba4683d0c629675afe2, type: 3}
