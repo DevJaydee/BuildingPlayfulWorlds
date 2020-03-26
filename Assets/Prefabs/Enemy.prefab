@@ -57,6 +57,9 @@ MonoBehaviour:
   navMeshAgent: {fileID: 4287586785989638129}
   anim: {fileID: 7683748618755252274}
   source: {fileID: 4552537406232320789}
+  minTimeBetweenAudio: 5
+  maxTimeBetweenAudio: 10
+  timeBetweenAudio: 0
 --- !u!195 &4287586785989638129
 NavMeshAgent:
   m_ObjectHideFlags: 0
