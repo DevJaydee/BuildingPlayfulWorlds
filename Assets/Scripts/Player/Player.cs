@@ -37,6 +37,15 @@ public class Player : MonoBehaviour
 	[Space]
 	[SerializeField] private AudioSource source = default;      // AudioSource Component.
 	private CharacterController charController = default;   // The Character controller variable.
+	[Space]
+	[SerializeField] private float staminaDrainSpeed = 20f; // How much stamina is drained each second when the run key is pressed.
+	[SerializeField] private bool canRun = true;
+	[SerializeField] private float staminaRegenTimeout = 2.5f;  // How long the player has to wait before he/she can run again/
+
+	[Header("Scriptable Objects")]
+	[SerializeField] private ScriptableFloat grenadeCount = default;
+	[SerializeField] private ScriptableFloat health = default;
+	[SerializeField] private ScriptableFloat stamina = default;
 	#endregion
 
 	#region Getters and Setters
@@ -88,6 +97,9 @@ public class Player : MonoBehaviour
 		else
 			state = PlayerState.Walking;
 
+		if(stamina.Value <= 0f && canRun)
+			StartCoroutine(RunCooldown());
+
 		SetMovementSpeed();
 		JumpInput();
 	}
@@ -97,10 +109,16 @@ public class Player : MonoBehaviour
 	/// </summary>
 	private void SetMovementSpeed()
 	{
-		if(Input.GetKey(runKey))
+		if(Input.GetKey(runKey) && canRun)
+		{
 			movementSpeed = Mathf.Lerp(movementSpeed, runSpeed, Time.deltaTime * runBuildUpSpeed);
+			DrainStamina();
+		}
 		else
+		{
 			movementSpeed = Mathf.Lerp(movementSpeed, walkSpeed, Time.deltaTime * runBuildUpSpeed);
+			FillStamina();
+		}
 	}
 
 	private IEnumerator PlayWalkAudio()
@@ -117,6 +135,25 @@ public class Player : MonoBehaviour
 				yield return null;
 			}
 		}
+	}
+
+	private void DrainStamina()
+	{
+		stamina.Value -= staminaDrainSpeed * Time.deltaTime;
+		stamina.Value = Mathf.Clamp(stamina.Value, 0, stamina.StartingValue);
+	}
+
+	private void FillStamina()
+	{
+		stamina.Value += staminaDrainSpeed * Time.deltaTime;
+		stamina.Value = Mathf.Clamp(stamina.Value, 0, stamina.StartingValue);
+	}
+
+	private IEnumerator RunCooldown()
+	{
+		canRun = false;
+		yield return new WaitForSeconds(staminaRegenTimeout);
+		canRun = true;
 	}
 	#endregion
 
@@ -174,9 +211,14 @@ public class Player : MonoBehaviour
 	#region Grenade Throwing
 	private void ThrowGrenade()
 	{
-		GameObject newGrenadeGO = Instantiate(grenadePrefab, Camera.main.transform.position, Camera.main.transform.rotation);
-		Grenade grenadeComp = newGrenadeGO.GetComponent<Grenade>();
-		newGrenadeGO.GetComponent<Rigidbody>().AddForce(newGrenadeGO.transform.forward * grenadeComp.ThrowForce, ForceMode.VelocityChange);
+		if(grenadeCount.Value > 0)
+		{
+			GameObject newGrenadeGO = Instantiate(grenadePrefab, Camera.main.transform.position, Camera.main.transform.rotation);
+			Grenade grenadeComp = newGrenadeGO.GetComponent<Grenade>();
+			newGrenadeGO.GetComponent<Rigidbody>().AddForce(newGrenadeGO.transform.forward * grenadeComp.ThrowForce, ForceMode.VelocityChange);
+
+			grenadeCount.Value--;
+		}
 	}
 	#endregion
 }
