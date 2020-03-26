@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class PlayerCamera : MonoBehaviour
 {
-	[SerializeField] private Transform playerBody = default;	// Transform of the playerbody
+	[SerializeField] private Transform playerBody = default;    // Transform of the playerbody
 	[Space]
-	[SerializeField] private string mouseXInputName = default;	// The input name for the X axis on the mouse
+	[SerializeField] private string mouseXInputName = default;  // The input name for the X axis on the mouse
 	[SerializeField] private string mouseYInputName = default;  // The input name for the Y axis on the mouse
-	[SerializeField] private float mouseSensitivity = default;	// Mouse sensitivity
+	[SerializeField] private float mouseSensitivity = default;  // Mouse sensitivity
 
 	// The max rotation on the X axis. This is to prevent the player from doing loops with the camera.
 	private float mouseXAxisClamp = 90f;
@@ -23,7 +23,8 @@ public class PlayerCamera : MonoBehaviour
 
 	private void Update()
 	{
-		RotateCamera();
+		if(GameManager.Instance.GameState == GameState.Playing)
+			RotateCamera();
 	}
 
 	/// <summary>
@@ -31,19 +32,19 @@ public class PlayerCamera : MonoBehaviour
 	/// </summary>
 	private void RotateCamera()
 	{
-		float multiplier = mouseSensitivity * Time.deltaTime;
-		float mouseX = Input.GetAxisRaw(mouseXInputName) * multiplier;
-		float mouseY = Input.GetAxisRaw(mouseYInputName) * multiplier;
+		//float multiplier = mouseSensitivity * Time.deltaTime;
+		float mouseX = Input.GetAxisRaw(mouseXInputName);
+		float mouseY = Input.GetAxisRaw(mouseYInputName);
 
 		xAxisClamp += mouseY;
 
-		if (xAxisClamp > mouseXAxisClamp)
+		if(xAxisClamp > mouseXAxisClamp)
 		{
 			xAxisClamp = 90f;
 			mouseY = 0f;
 			ClampXAxisRotationToValue(270);
 		}
-		else if (xAxisClamp < -mouseXAxisClamp)
+		else if(xAxisClamp < -mouseXAxisClamp)
 		{
 			xAxisClamp = -90f;
 			mouseY = 0f;
@@ -72,5 +73,6 @@ public class PlayerCamera : MonoBehaviour
 	public void LockCursor(bool lockState)
 	{
 		Cursor.lockState = lockState ? CursorLockMode.Locked : CursorLockMode.None;
+		Cursor.visible = !lockState;
 	}
 }
