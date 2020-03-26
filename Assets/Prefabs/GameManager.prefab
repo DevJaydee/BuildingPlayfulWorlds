@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5920086071919463802}
   - component: {fileID: 5920086071919463781}
+  - component: {fileID: 185062821}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -43,9 +44,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ccbaa037df833042990495e60e0b1c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameState: 0
+  hud: {fileID: 0}
   playerObject: {fileID: 0}
-  playerBehaviour: {fileID: 0}
-  playerCameraBehaviour: {fileID: 0}
+  player: {fileID: 0}
+  playerCamera: {fileID: 0}
+  playerWeaponTransform: {fileID: 0}
+  playerWeapons: []
+  playerActiveWeapon: {fileID: 0}
   pauseMenuKey: 27
   pauseMenuObject: {fileID: 0}
   pauseMenuEnableb: 0
+--- !u!114 &185062821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5920086071919463780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 972888676eb6587469b7ffb3d31c1a79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundWalkAudioClips:
+  - {fileID: 8300000, guid: 0ab130905a0bcbc48bccbfe2cc34cc60, type: 3}
+  - {fileID: 8300000, guid: a0daebfd9a7bc244eadd2f6f1d73b578, type: 3}
+  - {fileID: 8300000, guid: dbe35cd831c9115458874589bd4afe6c, type: 3}
+  - {fileID: 8300000, guid: eebe2f8015f6d0f4c9d8745755faa3bf, type: 3}
+  - {fileID: 8300000, guid: fe37c64fd8cff9f4592cf18e17b9e476, type: 3}
+  PistolAudio: {fileID: 8300000, guid: 9ada9fc9a0fc0c7408a3fd6667cf5c69, type: 3}
+  RifleAudio: {fileID: 8300000, guid: ceb401cd17c54ea46960b3aa72066f59, type: 3}
+  SniperAudio: {fileID: 8300000, guid: e080884ea58c8ba4683d0c629675afe2, type: 3}
+  SilencedAudio: {fileID: 8300000, guid: 97869e73985dbcb4a89f8b0775995757, type: 3}
