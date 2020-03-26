@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
 	[SerializeField] private GameState gameState = GameState.Playing;   // State of the game
 	[Space]
 	[SerializeField] private HUD hud = default;     // Reference to the HUD component.
+	[SerializeField] private GameObject uiFadeIn = default; // Reference to the FadeIn gameobject.
 	[Space]
 	[SerializeField] private GameObject playerObject = default; // Reference to the player GameObject.
 	[SerializeField] private Player player = default; // Reference to the PlayerBehaviour.
@@ -26,7 +27,7 @@ public class GameManager : MonoBehaviour
 	[Space]
 	[SerializeField] private KeyCode pauseMenuKey = KeyCode.Escape; // Which key you have to press to open the pause menu.
 	[SerializeField] private GameObject pauseMenuObject = default;  // The Pausemenu.
-	[SerializeField] private bool pauseMenuEnableb = false; // Bool to keep track of the state of the pause menu.
+	[SerializeField] private bool pauseMenuEnabled = false; // Bool to keep track of the state of the pause menu.
 	#endregion
 
 	#region Getters & Setters
@@ -45,6 +46,8 @@ public class GameManager : MonoBehaviour
 
 	private void Start()
 	{
+		uiFadeIn.SetActive(true);
+
 		GetComponents();
 		GetWeapons();
 		StartCoroutine(UpdateHUD());
@@ -53,7 +56,7 @@ public class GameManager : MonoBehaviour
 
 	private void Update()
 	{
-		if(Input.GetKeyDown(pauseMenuKey))
+		if(Input.GetKeyDown(pauseMenuKey) && !pauseMenuEnabled)
 			TriggerPauseMenu();
 	}
 
@@ -105,13 +108,18 @@ public class GameManager : MonoBehaviour
 	#region Menu Functions
 	public void TriggerPauseMenu()
 	{
-		pauseMenuEnableb = !pauseMenuEnableb;
+		pauseMenuEnabled = !pauseMenuEnabled;
 
-		Time.timeScale = pauseMenuEnableb ? 0f : 1f;
+		Time.timeScale = pauseMenuEnabled ? 0f : 1f;
 		gameState = Time.timeScale == 0 ? GameState.Paused : GameState.Playing;
 
-		pauseMenuObject.SetActive(pauseMenuEnableb);
-		playerCamera.LockCursor(!pauseMenuEnableb);
+		pauseMenuObject.SetActive(pauseMenuEnabled);
+		playerCamera.LockCursor(!pauseMenuEnabled);
+	}
+
+	public void QuitApplication()
+	{
+		Application.Quit();
 	}
 	#endregion
 }
