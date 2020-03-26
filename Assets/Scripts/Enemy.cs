@@ -78,6 +78,8 @@ public class Enemy : MonoBehaviour, IDamagable
 		if(health <= 0)
 			OnDeathEvent();
 
+		if(GameManager.Instance.GameState == GameState.Paused) source.Pause(); else source.UnPause();
+
 		anim.SetFloat("MovementSpeed", (navMeshAgent.velocity).magnitude);
 	}
 
