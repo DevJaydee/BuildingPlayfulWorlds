@@ -6,15 +6,16 @@ public class Building : MonoBehaviour
 {
 	#region Variables
 	[Header("Variables")]
-	[SerializeField] private string buildingName;                 // Name of the Building (CornerBuilding, Fronbuilding etc.)
-	[SerializeField] private int minHeight;                       // Minimum amount of floors.
-	[SerializeField] private int maxHeight;                       // Maximum amount of floors.
-	[SerializeField] private int currentHeight;                   // Current height of the building.
+	[SerializeField] private string buildingName;					// Name of the Building (CornerBuilding, Fronbuilding etc.)
+	[SerializeField] private float heightDif;						// Height Difference between objects	
+	[SerializeField] private int minHeight;							// Minimum amount of floors.
+	[SerializeField] private int maxHeight;							// Maximum amount of floors.
+	[SerializeField] private int currentHeight;						// Current height of the building.
 
 	[Header("Objects")]
-	[SerializeField] private GameObject[] baseObjects;            // All the possible Base Objects. (a.k.a. Ground Floor)
-	[SerializeField] private GameObject[] midObjects;             // All the possible Middle Objects. (a.k.a. First through tenth floor)
-	[SerializeField] private GameObject[] roofObjects;            // All the possible Roof Objects.
+	[SerializeField] private GameObject[] baseObjects;				// All the possible Base Objects. (a.k.a. Ground Floor)
+	[SerializeField] private GameObject[] midObjects;				// All the possible Middle Objects. (a.k.a. First through tenth floor)
+	[SerializeField] private GameObject[] roofObjects;				// All the possible Roof Objects.
 
 	[Header("Editor Specific Values")]
 	[SerializeField] private float buildingPlacementSpeed = 0.1f; // How long the IEnumerator has to wait before placing another piece to the building.
@@ -57,14 +58,14 @@ public class Building : MonoBehaviour
 		{
 			int midObjectIndex = Random.Range(0, midObjects.Length - 1);
 
-			float heightOffset = 5f * buildingBlockIndex;
+			float heightOffset = heightDif * buildingBlockIndex;
 			Vector3 spawnPos = new Vector3(transform.position.x, transform.position.y + heightOffset, transform.position.z);
 
 			Instantiate(MidObjects[midObjectIndex], spawnPos, transform.rotation, transform);
 
 			if(buildingBlockIndex == amountOfBuildingBlocks)
 			{
-				spawnPos.y += 5f;
+				spawnPos.y += heightDif;
 				Instantiate(RoofObjects[roofObjectIndex], spawnPos, transform.rotation, transform);
 			}
 			yield return new WaitForSeconds(buildingPlacementSpeed);
@@ -72,4 +73,10 @@ public class Building : MonoBehaviour
 		yield return null;
 	}
 	#endregion
+
+	private void OnDrawGizmos()
+	{
+		Gizmos.color = Color.green;
+		Gizmos.DrawWireCube(transform.position, Vector3.one);
+	}
 }
