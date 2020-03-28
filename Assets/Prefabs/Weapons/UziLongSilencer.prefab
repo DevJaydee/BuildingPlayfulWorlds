@@ -57,7 +57,7 @@ MonoBehaviour:
   fireRate: 20
   hitMask:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 768
   hitParticles: {fileID: 8617354624146884092, guid: 32fc83993edfba64bb243ff0b3012ef6,
     type: 3}
   muzzleFlash: {fileID: 1375467581206261656, guid: 41919574413d0214a8a6dc47390e0599,
