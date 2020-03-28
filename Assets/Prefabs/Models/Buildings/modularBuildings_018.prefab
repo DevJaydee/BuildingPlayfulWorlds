@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8441011749865445764}
   - component: {fileID: 1319946180}
-  m_Layer: 11
+  m_Layer: 8
   m_Name: modularBuildings_018
   m_TagString: Untagged
   m_Icon: {fileID: 0}
