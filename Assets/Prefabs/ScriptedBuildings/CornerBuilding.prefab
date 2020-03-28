@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8381189411214143600}
   - component: {fileID: 8381189411214143607}
+  - component: {fileID: -8544615138020831813}
   m_Layer: 0
   m_Name: CornerBuilding
   m_TagString: Untagged
@@ -44,6 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buildingName: Corner Building
+  heightDif: 0
   minHeight: 3
   maxHeight: 15
   currentHeight: 0
@@ -59,3 +61,19 @@ MonoBehaviour:
   - {fileID: 3103197841726881550, guid: b44dcc170de5e864e8439496e1211691, type: 3}
   - {fileID: 4581402522929654383, guid: 892ed48f9e94e624c92e283e52f50afd, type: 3}
   buildingPlacementSpeed: 0
+--- !u!208 &-8544615138020831813
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8381189411214143601}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 5, y: 5, z: 5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -5, y: 0, z: -5}
+  m_TimeToStationary: 0.5

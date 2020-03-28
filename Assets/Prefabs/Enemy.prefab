@@ -51,7 +51,7 @@ MonoBehaviour:
   onDeathParticles: {fileID: 2599752217529339782, guid: 0f67cf56eae40b94d9fcd021eb56ef5a,
     type: 3}
   target: {fileID: 0}
-  targetDetectionRange: 50
+  targetDetectionRange: 10000
   targetEngagementRange: 1
   moveDestinationSetInterval: 0.1
   navMeshAgent: {fileID: 4287586785989638129}
