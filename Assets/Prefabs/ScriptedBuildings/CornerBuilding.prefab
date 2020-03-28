@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8381189411214143601
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8381189411214143600}
+  - component: {fileID: 8381189411214143607}
+  m_Layer: 0
+  m_Name: CornerBuilding
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8381189411214143600
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8381189411214143601}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 8, y: 0, z: 50}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &8381189411214143607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8381189411214143601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08cc689f42e7bea4190be29a69739a3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildingName: Corner Building
+  minHeight: 3
+  maxHeight: 15
+  currentHeight: 0
+  baseObjects:
+  - {fileID: 4405115235309819812, guid: 8077e39df496c97468f85485adf7bd99, type: 3}
+  midObjects:
+  - {fileID: 1665423722781943589, guid: 960a9c8e669b13e47b93c6480d7f6229, type: 3}
+  - {fileID: 6566919907975011905, guid: 3162d73d69fb3bd4f889834fc77eeece, type: 3}
+  - {fileID: 830190739288075753, guid: ae9ed614ee111b44589584aab132205b, type: 3}
+  - {fileID: 808540435659512750, guid: 4f5e60be5c256024babc6ccac3cf3e7e, type: 3}
+  roofObjects:
+  - {fileID: 1384754610114120641, guid: 716913e5f34f1a142bc4f69216975baa, type: 3}
+  - {fileID: 3103197841726881550, guid: b44dcc170de5e864e8439496e1211691, type: 3}
+  - {fileID: 4581402522929654383, guid: 892ed48f9e94e624c92e283e52f50afd, type: 3}
+  buildingPlacementSpeed: 0

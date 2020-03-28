@@ -1,0 +1,80 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6537477642573622104
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6537477642573622105}
+  - component: {fileID: 6537477642573622110}
+  m_Layer: 0
+  m_Name: FrontFacingBuilding
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6537477642573622105
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6537477642573622104}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 50}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &6537477642573622110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6537477642573622104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08cc689f42e7bea4190be29a69739a3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildingName: Front Facing Building
+  minHeight: 3
+  maxHeight: 15
+  currentHeight: 0
+  baseObjects:
+  - {fileID: 6835154853793796489, guid: c5ae490942465a24bb5737ff3cca6d9b, type: 3}
+  - {fileID: 5033573075289116788, guid: 735a818a44f2f8145876174edbc81e56, type: 3}
+  - {fileID: 2689521338267581776, guid: 09a005c6d26c9504188d51f24936e8d9, type: 3}
+  - {fileID: 990788132343398174, guid: b374f573c6c087948adef6ef6fde2204, type: 3}
+  - {fileID: 2799850628240670542, guid: 66fe3a4a850d3a34caacce4223884adc, type: 3}
+  - {fileID: 3515950577028997473, guid: 08b363cf29bb9254db5ed475b6f41b0d, type: 3}
+  - {fileID: 3871477810207413170, guid: 673d41e0467304146918e86253572195, type: 3}
+  midObjects:
+  - {fileID: 4293432058528192962, guid: ddfff2d5b074a2c4999254e9c450359e, type: 3}
+  - {fileID: 6788038561086413794, guid: e605ae234f2f34545afb27e0d3a5beb7, type: 3}
+  - {fileID: 7808924712318067873, guid: bc0ca0031cee598448ad5a0a6a72cd8b, type: 3}
+  - {fileID: 3020711479248833510, guid: 479a00773267f0f49951c2e22ddb15ed, type: 3}
+  - {fileID: 5033573075289116788, guid: 735a818a44f2f8145876174edbc81e56, type: 3}
+  - {fileID: 2689521338267581776, guid: 09a005c6d26c9504188d51f24936e8d9, type: 3}
+  - {fileID: 6603548678749323696, guid: 8a10f37924a77ec409b8f0a1eff97aba, type: 3}
+  - {fileID: 5456572483317125975, guid: e52ce1f2c192f1d42a6d7f9140d4c298, type: 3}
+  - {fileID: 3188914456072612781, guid: 02632899534873746a7ce7bc1d176da1, type: 3}
+  - {fileID: 8179448542934171026, guid: 88389964ed53f394f82ef722f73104ea, type: 3}
+  roofObjects:
+  - {fileID: 4253300964490466043, guid: 992fe86bde242c146ad8e3ccf3699622, type: 3}
+  - {fileID: 3741050304106182639, guid: 40eda801e2c5a1a4da86924ecc7a3319, type: 3}
+  - {fileID: 2787608296843152145, guid: d1517fa67caa3d74084fa3e428e3af2d, type: 3}
+  - {fileID: 9215748038953171787, guid: 7e67c67347035c34290969de03f27214, type: 3}
+  - {fileID: 4594080708448106455, guid: 93fa65a30c555ad4ea35865fc21dfc0d, type: 3}
+  - {fileID: 130395913799572155, guid: 2223b0d0d4a88284cb8639d1b63a5790, type: 3}
+  - {fileID: 1414601619083829839, guid: 566aa909540cde147861a286b2e1ca6b, type: 3}
+  - {fileID: 431804279268722213, guid: 2c53ad30e03ff364aa8e3ec3a422acc6, type: 3}
+  - {fileID: 7403366234423234035, guid: 5bf4e90e9e72f354f9041becc8a7cb29, type: 3}
+  - {fileID: 4248102660570443606, guid: 7f3a3859cdc1e394083fb813e5aa4d77, type: 3}
+  buildingPlacementSpeed: 0
