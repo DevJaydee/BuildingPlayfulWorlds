@@ -15,6 +15,9 @@ public class Building : MonoBehaviour
 	[SerializeField] private GameObject[] baseObjects;            // All the possible Base Objects. (a.k.a. Ground Floor)
 	[SerializeField] private GameObject[] midObjects;             // All the possible Middle Objects. (a.k.a. First through tenth floor)
 	[SerializeField] private GameObject[] roofObjects;            // All the possible Roof Objects.
+
+	[Header("Editor Specific Values")]
+	[SerializeField] private float buildingPlacementSpeed = 0.1f; // How long the IEnumerator has to wait before placing another piece to the building.
 	#endregion
 
 	#region Properties
@@ -43,6 +46,8 @@ public class Building : MonoBehaviour
 	private IEnumerator Generate()
 	{
 		int amountOfBuildingBlocks = Random.Range(minHeight, maxHeight);
+		currentHeight = amountOfBuildingBlocks;
+
 		int baseObjectIndex = Random.Range(0, BaseObjects.Length - 1);
 		int roofObjectIndex = Random.Range(0, RoofObjects.Length - 1);
 
@@ -62,7 +67,7 @@ public class Building : MonoBehaviour
 				spawnPos.y += 5f;
 				Instantiate(RoofObjects[roofObjectIndex], spawnPos, transform.rotation, transform);
 			}
-			yield return new WaitForSeconds(0.5f);
+			yield return new WaitForSeconds(buildingPlacementSpeed);
 		}
 		yield return null;
 	}
