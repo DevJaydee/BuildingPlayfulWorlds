@@ -52,7 +52,7 @@ MonoBehaviour:
   gunType: 3
   interactionCollider: {fileID: 2903569058601882062}
   gunSwitching: {fileID: 0}
-  damage: 10
+  damage: 20
   range: 100
   fireRate: 20
   hitMask:
@@ -95,7 +95,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.35
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
