@@ -28,8 +28,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8532007717218147161}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 7683748618764341202}
   m_Father: {fileID: 0}
@@ -54,6 +54,7 @@ MonoBehaviour:
   targetDetectionRange: 10000
   targetEngagementRange: 1
   moveDestinationSetInterval: 0.1
+  moveSpeed: 4
   navMeshAgent: {fileID: 4287586785989638129}
   anim: {fileID: 7683748618755252274}
   source: {fileID: 4552537406232320789}
@@ -79,7 +80,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 2
-  m_BaseOffset: 0
+  m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!136 &2405514297836742943
@@ -207,7 +208,7 @@ PrefabInstance:
     - target: {fileID: 5205312128330885533, guid: fe917154b3e46914bb51f8ff6b092294,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 5205312128330885533, guid: fe917154b3e46914bb51f8ff6b092294,
         type: 3}
