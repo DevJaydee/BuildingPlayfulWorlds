@@ -22,8 +22,9 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: MuzzleFlash01
   m_Shader: {fileID: 4800000, guid: b7839dad95683814aa64166edc107ae2, type: 3}
-  m_ShaderKeywords: _EMISSION _FADING_ON _RECEIVE_SHADOWS_OFF _SOFTPARTICLES_ON
-  m_LightmapFlags: 0
+  m_ShaderKeywords: _ALPHAPREMULTIPLY_ON _COLORADDSUBDIFF_ON _EMISSION _FADING_ON
+    _FLIPBOOKBLENDING_ON _RECEIVE_SHADOWS_OFF _SOFTPARTICLES_ON
+  m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: 3050
@@ -77,24 +78,24 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _AlphaClip: 0
-    - _Blend: 2
+    - _Blend: 1
     - _BlendOp: 0
     - _BumpScale: 1
     - _CameraFadingEnabled: 0
     - _CameraFarFadeDistance: 2
     - _CameraNearFadeDistance: 1
-    - _ColorMode: 0
+    - _ColorMode: 2
     - _Cull: 0
     - _Cutoff: 0
     - _DisplaceAmount: 1.5
     - _DistortionBlend: 0.5
     - _DistortionEnabled: 0
     - _DistortionStrength: 1
-    - _DistortionStrengthScaled: 0
-    - _DstBlend: 1
+    - _DistortionStrengthScaled: 0.1
+    - _DstBlend: 10
     - _EdgeSize: 0.2
     - _EmissionEnabled: 0
-    - _FlipbookBlending: 0
+    - _FlipbookBlending: 1
     - _FlipbookMode: 0
     - _Glossiness: 0.5
     - _LightingEnabled: 0
@@ -102,7 +103,7 @@ Material:
     - _Mode: 4
     - _NoiseStrength: 0.4
     - _QueueOffset: 0
-    - _Smoothness: 0.5
+    - _Smoothness: 0
     - _SoftParticlesEnabled: 1
     - _SoftParticlesFarFadeDistance: 1
     - _SoftParticlesNearFadeDistance: 0
@@ -113,7 +114,7 @@ Material:
     - _cutoffTemp: 0
     m_Colors:
     - _BaseColor: {r: 11.984316, g: 11.984316, b: 11.984316, a: 1}
-    - _BaseColorAddSubDiff: {r: 0, g: 0, b: 0, a: 0}
+    - _BaseColorAddSubDiff: {r: -1, g: 0, b: 0, a: 0}
     - _CameraFadeParams: {r: 0, g: Infinity, b: 0, a: 0}
     - _Color: {r: 11.984314, g: 11.984314, b: 11.984314, a: 1}
     - _ColorAddSubDiff: {r: 0, g: 0, b: 0, a: 0}

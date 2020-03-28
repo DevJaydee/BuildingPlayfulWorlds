@@ -48,19 +48,19 @@ public class AudioMaster : MonoBehaviour
 		switch(type)
 		{
 			case GunType.Pistol:
-				source.clip = PistolAudio;
+				source.PlayOneShot(PistolAudio);
 				break;
 
 			case GunType.Rifle:
-				source.clip = RifleAudio;
+				source.PlayOneShot(RifleAudio);
 				break;
 
 			case GunType.Sniper:
-				source.clip = SniperAudio;
+				source.PlayOneShot(SniperAudio);
 				break;
 
 			case GunType.Silenced:
-				source.clip = SilencedAudio;
+				source.PlayOneShot(SilencedAudio);
 				break;
 
 			default:
