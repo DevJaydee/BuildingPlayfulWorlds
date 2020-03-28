@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2765645106701576021}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: modularBuildings_038
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 2765645106701576023}
   - component: {fileID: 2765645106698184567}
   - component: {fileID: 2765645106699281847}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mesh1_Group1_Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}

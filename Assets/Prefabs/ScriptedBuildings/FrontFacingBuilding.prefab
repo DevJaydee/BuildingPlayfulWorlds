@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6537477642573622105}
   - component: {fileID: 6537477642573622110}
+  - component: {fileID: 569559212}
   m_Layer: 0
   m_Name: FrontFacingBuilding
   m_TagString: Untagged
@@ -44,6 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buildingName: Front Facing Building
+  heightDif: 6
   minHeight: 3
   maxHeight: 15
   currentHeight: 0
@@ -72,9 +74,20 @@ MonoBehaviour:
   - {fileID: 2787608296843152145, guid: d1517fa67caa3d74084fa3e428e3af2d, type: 3}
   - {fileID: 9215748038953171787, guid: 7e67c67347035c34290969de03f27214, type: 3}
   - {fileID: 4594080708448106455, guid: 93fa65a30c555ad4ea35865fc21dfc0d, type: 3}
-  - {fileID: 130395913799572155, guid: 2223b0d0d4a88284cb8639d1b63a5790, type: 3}
-  - {fileID: 1414601619083829839, guid: 566aa909540cde147861a286b2e1ca6b, type: 3}
-  - {fileID: 431804279268722213, guid: 2c53ad30e03ff364aa8e3ec3a422acc6, type: 3}
-  - {fileID: 7403366234423234035, guid: 5bf4e90e9e72f354f9041becc8a7cb29, type: 3}
-  - {fileID: 4248102660570443606, guid: 7f3a3859cdc1e394083fb813e5aa4d77, type: 3}
   buildingPlacementSpeed: 0
+--- !u!208 &569559212
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6537477642573622104}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 5, y: 5, z: 5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -5, y: 0, z: -5}
+  m_TimeToStationary: 0.5
