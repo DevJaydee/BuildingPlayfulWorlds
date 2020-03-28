@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
 	[SerializeField] private HUD hud = default;     // Reference to the HUD component.
 	[SerializeField] private GameObject uiFadeIn = default; // Reference to the FadeIn gameobject.
 	[Space]
-	[SerializeField] private GameObject playerObject = default; // Reference to the player GameObject.
+	[SerializeField] private GameObject[] enemyTargetObjects = default; // Reference to the enemy target GameObjects.
 	[SerializeField] private Player player = default; // Reference to the PlayerBehaviour.
 	[SerializeField] private PlayerCamera playerCamera = default; // Reference to the PlayerCameraBehaviour.
 	[SerializeField] private Transform playerWeaponTransform = default; // Reference to the PlayerWeaponTransform.
@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
 
 	#region Getters & Setters
 	public static GameManager Instance { get => instance; set => instance = value; }
-	public GameObject PlayerObject { get => playerObject; set => playerObject = value; }
+	public GameObject[] EnemyTargetObjects { get => enemyTargetObjects; set => enemyTargetObjects = value; }
 	public Player Player { get => player; set => player = value; }
 	public HUD Hud { get => hud; set => hud = value; }
 	public GameState GameState { get => gameState; set => gameState = value; }
@@ -62,9 +62,9 @@ public class GameManager : MonoBehaviour
 
 	private void GetComponents()
 	{
-		playerObject = GameObject.FindGameObjectWithTag("Player");
-		player = playerObject.GetComponent<Player>();
-		playerCamera = playerObject.GetComponentInChildren<PlayerCamera>();
+		enemyTargetObjects = GameObject.FindGameObjectsWithTag("Target");
+		player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+		playerCamera = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<PlayerCamera>();
 	}
 
 	public void GetWeapons()
