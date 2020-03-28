@@ -14,6 +14,7 @@ public class Enemy : MonoBehaviour, IDamagable
 	[SerializeField] private float targetDetectionRange = 35f;  // How far the enemy can "sense" the target. This works through walls atm
 	[SerializeField] private float targetEngagementRange = 15f; // How far the enemy can shoot at the target
 	[SerializeField] private float moveDestinationSetInterval = 0.1f;   // How often the enemy is told to move to the target position.
+	[SerializeField] private float moveSpeed = 2.5f;                    // Movementspeed of the enemy.
 	[Space]
 	[SerializeField] private NavMeshAgent navMeshAgent = default;   // Reference to the navMeshAgent component.
 	[Space]
@@ -52,7 +53,7 @@ public class Enemy : MonoBehaviour, IDamagable
 	#region MonoBehaviour Callbacks
 	private void Start()
 	{
-		target = GameManager.Instance.PlayerObject.transform;
+		target = GameManager.Instance.EnemyTargetObjects[Random.Range(0, GameManager.Instance.EnemyTargetObjects.Length)].transform;
 
 		behaviourSM = new StateMachine();
 
@@ -63,6 +64,7 @@ public class Enemy : MonoBehaviour, IDamagable
 		timeBetweenAudio = Random.Range(0.5f, 3f);
 
 		navMeshAgent.stoppingDistance = targetEngagementRange;
+		navMeshAgent.speed = moveSpeed;
 
 		behaviourSM.Initialize(searching);
 
