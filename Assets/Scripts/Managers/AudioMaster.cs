@@ -11,10 +11,10 @@ public class AudioMaster : MonoBehaviour
 	[Header("Zombie Growls")]
 	[SerializeField] private AudioClip[] zombieGrowls = default;            // Array with zombie Growls
 	[Header("Weapon Sounds")]
-	[SerializeField] private AudioClip PistolAudio = default;       // Audio clip for the pistol.
-	[SerializeField] private AudioClip RifleAudio = default;        // Audio clip for the Rifle.
-	[SerializeField] private AudioClip SniperAudio = default;       // Audio clip for the Sniper.
-	[SerializeField] private AudioClip SilencedAudio = default;     // Audio clip for the Silenced.
+	[SerializeField] private AudioClip[] PistolAudio = default;       // Audio clip for the pistol.
+	[SerializeField] private AudioClip[] RifleAudio = default;        // Audio clip for the Rifle.
+	[SerializeField] private AudioClip[] SniperAudio = default;       // Audio clip for the Sniper.
+	[SerializeField] private AudioClip[] SilencedAudio = default;     // Audio clip for the Silenced.
 
 	public static AudioMaster Instance { get => instance; set => instance = value; }
 	#endregion
@@ -48,19 +48,19 @@ public class AudioMaster : MonoBehaviour
 		switch(type)
 		{
 			case GunType.Pistol:
-				source.PlayOneShot(PistolAudio);
+				source.PlayOneShot(PistolAudio[Random.Range(0, PistolAudio.Length)]);
 				break;
 
 			case GunType.Rifle:
-				source.PlayOneShot(RifleAudio);
+				source.PlayOneShot(RifleAudio[Random.Range(0, PistolAudio.Length)]);
 				break;
 
 			case GunType.Sniper:
-				source.PlayOneShot(SniperAudio);
+				source.PlayOneShot(SniperAudio[Random.Range(0, PistolAudio.Length)]);
 				break;
 
 			case GunType.Silenced:
-				source.PlayOneShot(SilencedAudio);
+				source.PlayOneShot(SilencedAudio[Random.Range(0, PistolAudio.Length)]);
 				break;
 
 			default:
