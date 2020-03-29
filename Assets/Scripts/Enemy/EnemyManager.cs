@@ -5,6 +5,8 @@ using UnityEngine;
 public class EnemyManager : MonoBehaviour
 {
 	#region Variables
+	private static EnemyManager instance = null;                        // Instance of this class.
+
 	[SerializeField] private Transform[] enemySpawns = default;         // Array with all the spawn points for the enemies.
 	[SerializeField] private Transform enemySpawnParent = default;      // Which transform the enemies will be parented to.
 	[Space]
@@ -12,12 +14,31 @@ public class EnemyManager : MonoBehaviour
 	[SerializeField] private EnemyWave[] enemyWaves = default;          // Array with all the enemy waves.
 	[Space]
 	[SerializeField] private List<GameObject> enemiesInScene = new List<GameObject>();      // List with all the enemies in the scene.
+	[Space]
+	[SerializeField] private ScriptableFloat currentEnemiesAliveScriptableFloat = default;              // Reference to the current Enemies alive scriptable float object
+	[SerializeField] private ScriptableFloat currentEnemyHealthMultiplierScriptableFloat = default;     // Reference to the current Enemy Health Multiplier scriptable float object
+	[SerializeField] private ScriptableFloat currentEnemyWaveScriptableFloat = default;                 // Reference to the current Enemy Wave scriptable float object
+	#endregion
+
+	#region Properties
+	public static EnemyManager Instance { get => instance; set => instance = value; }
 	#endregion
 
 	#region Monobehaviour Callbacks
+	private void Awake()
+	{
+		if(!instance || instance != this)
+			instance = this;
+	}
+
 	private void Start()
 	{
 		StartCoroutine(SpawnEnemyWaves());
+	}
+
+	private void Update()
+	{
+		currentEnemiesAliveScriptableFloat.Value = enemiesInScene.Count;
 	}
 	#endregion
 
@@ -30,37 +51,30 @@ public class EnemyManager : MonoBehaviour
 	/// <returns></returns>
 	private IEnumerator SpawnEnemyWaves()
 	{
-		while(true)
+		// loop Through all the enemy waves
+		for(int i = 0; i < enemyWaves.Length; i++)
 		{
-			// loop Through all the enemy waves
-			for(int i = 0; i < enemyWaves.Length; i++)
+			currentEnemyWaveScriptableFloat.Value++;
+			// Spawn the amount of enemies from the wave properties
+			for(int x = 0; x < enemyWaves[i].EnemyAmount; x++)
 			{
+				int randSpawnIndex = Random.Range(0, enemySpawns.Length);
+				GameObject newEnemyGO = Instantiate(enemyWaves[i].EnemyPrefab, enemySpawns[randSpawnIndex].position, Quaternion.identity, enemySpawnParent);
+				newEnemyGO.GetComponent<Enemy>().Health *= enemyWaves[i].EnemyHealthMultiplier;
 
-				// Spawn the amount of enemies from the wave properties
-				for(int x = 0; x < enemyWaves[i].EnemyAmount; x++)
-				{
-					int randSpawnIndex = Random.Range(0, enemySpawns.Length);
-					GameObject newEnemyGO = Instantiate(enemyWaves[i].EnemyPrefab, enemySpawns[randSpawnIndex].position, Quaternion.identity, enemySpawnParent);
-					newEnemyGO.GetComponent<Enemy>().Health *= enemyWaves[i].EnemyHealthMultiplier;
+				enemiesInScene.Add(newEnemyGO);
 
-					CleanupEnemiesInSceneList();
-					enemiesInScene.Add(newEnemyGO);
-					yield return new WaitForSeconds(enemyWaves[i].EnemySpawnInterval);
-				}
-				yield return new WaitForSeconds(timeBetweenWaves);
+				currentEnemyHealthMultiplierScriptableFloat.Value = enemyWaves[i].EnemyHealthMultiplier;
+				yield return new WaitForSeconds(enemyWaves[i].EnemySpawnInterval);
 			}
-
-			yield return null;
+			yield return new WaitForSeconds(timeBetweenWaves);
 		}
+		yield return null;
 	}
 
-	private void CleanupEnemiesInSceneList()
+	public void RemoveFromList(GameObject enemy)
 	{
-		for(int i = 0; i < enemiesInScene.Count; i++)
-		{
-			if(enemiesInScene[i] == null)
-				enemiesInScene.RemoveAt(i);
-		}
+		enemiesInScene.Remove(enemy);
 	}
 	#endregion
 }
