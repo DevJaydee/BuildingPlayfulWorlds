@@ -5,7 +5,8 @@ using UnityEngine;
 public enum GameState
 {
 	Playing,
-	Paused
+	Paused,
+	Gameover
 }
 
 public class GameManager : MonoBehaviour
@@ -28,6 +29,8 @@ public class GameManager : MonoBehaviour
 	[SerializeField] private KeyCode pauseMenuKey = KeyCode.Escape; // Which key you have to press to open the pause menu.
 	[SerializeField] private GameObject pauseMenuObject = default;  // The Pausemenu.
 	[SerializeField] private bool pauseMenuEnabled = false; // Bool to keep track of the state of the pause menu.
+	[Space]
+	[SerializeField] private GameObject GameOverMenu = default;     // Reference to the Gameover menu object.
 	#endregion
 
 	#region Getters & Setters
@@ -52,12 +55,26 @@ public class GameManager : MonoBehaviour
 		GetWeapons();
 		StartCoroutine(UpdateHUD());
 		StartCoroutine(GetActiveWeapon());
+
+		Time.timeScale = 1;
 	}
 
 	private void Update()
 	{
 		if(Input.GetKeyDown(pauseMenuKey) && !pauseMenuEnabled)
 			TriggerPauseMenu();
+
+		if(gameState == GameState.Gameover)
+		{
+			GameOver();
+		}
+	}
+
+	private void GameOver()
+	{
+		GameOverMenu.SetActive(true);
+		Time.timeScale = 0;
+		playerCamera.LockCursor(false);
 	}
 
 	private void GetComponents()
