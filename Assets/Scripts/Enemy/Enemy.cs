@@ -91,10 +91,11 @@ public class Enemy : MonoBehaviour, IDamagable
 	}
 	#endregion
 
-	#region Cool Functions
+	#region Voids
 	public void OnDeathEvent()
 	{
 		Instantiate(onDeathParticles, transform.position, Quaternion.identity);
+		EnemyManager.Instance.RemoveFromList(gameObject);
 		Destroy(gameObject);
 	}
 	public void Damage(float damageAmount)
