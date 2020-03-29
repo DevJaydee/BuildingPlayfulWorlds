@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class HUD : MonoBehaviour
 {
 	#region Variables
+	private static HUD instance = null;                                             // Static instance of the HUD
+
 	[SerializeField] private float hudUpdateInterval = 0.1f;                        // How often per second the HUD should update.
 	[Space(15)]
 	[Header("Player HUD Elements")]
@@ -20,6 +22,9 @@ public class HUD : MonoBehaviour
 	[Space]
 	[SerializeField] private Image playerStaminaImage = default;                    // Reference to the Player Stamina Image Component.
 	[SerializeField] private ScriptableFloat playerStaminaAmount = default;         // Reference to the player stamina amount float.
+	[Space]
+	[SerializeField] private Image playerBaseHealthImage = default;                 // Reference to the Player Base Health Image Component.
+	[SerializeField] private ScriptableFloat playerBaseHealthAmount = default;      // Reference to the Player Base Health Scriptable Float.
 
 	[Header("Enemy HUD Elements")]
 	[SerializeField] private TextMeshProUGUI currentEnemiesAliveTextMesh = default; // Reference to the Zombies alive text mesh.
@@ -30,17 +35,33 @@ public class HUD : MonoBehaviour
 	[Space]
 	[SerializeField] private TextMeshProUGUI currentEnemyHealthMultiplierTextMesh = default;  // Reference to the Zombies health multiplier text mesh.
 	[SerializeField] private ScriptableFloat currentEnemyHealthMultiplierAmount = default;  // Reference to the current enemy health mulitplier Scriptablefloat.
+	[Space]
+	[SerializeField] private TextMeshProUGUI nextWaveCountdownTextMesh = default;               // Reference to the nextWaveCountdownTextMesh.
+	[SerializeField] private float nextWaveCountdown = default;									// Time until next wave.
 	#endregion
 
 	#region Getters and Setters
+	public static HUD Instance { get => instance; set => instance = value; }
 	public TextMeshProUGUI AmmoTextMesh { get => ammoTextMesh; set => ammoTextMesh = value; }
 	public float HudUpdateInterval { get => hudUpdateInterval; set => hudUpdateInterval = value; }
+	public float NextWaveCountdown { get => nextWaveCountdown; set => nextWaveCountdown = value; }
 	#endregion
 
+	#region Monobehaviour Callbacks
+	private void Awake()
+	{
+		if(!instance || instance != this)
+			instance = this;
+	}
 	private void Start()
 	{
 		StartCoroutine(UpdateHUD());
 	}
+	private void Update()
+	{
+		WaveCountdown();
+	}
+	#endregion
 
 	private IEnumerator UpdateHUD()
 	{
@@ -49,6 +70,7 @@ public class HUD : MonoBehaviour
 			grenadeTextMesh.text = grenadeAmount.Value.ToString();
 			playerHealthImage.fillAmount = playerHealthAmount.Value / 100;
 			playerStaminaImage.fillAmount = playerStaminaAmount.Value / 100;
+			playerBaseHealthImage.fillAmount = playerBaseHealthAmount.Value / 100;
 
 			currentEnemiesAliveTextMesh.text = "Zombies Alive: " + currentEnemiesAliveAmount.Value;
 			currentEnemyWaveTextMesh.text = "Current Wave: " + currentEnemyWaveAmount.Value;
@@ -56,5 +78,15 @@ public class HUD : MonoBehaviour
 
 			yield return new WaitForSeconds(hudUpdateInterval);
 		}
+	}
+
+	public void WaveCountdown()
+	{
+		nextWaveCountdown -= Time.deltaTime;
+		if(nextWaveCountdown > 0)
+			nextWaveCountdownTextMesh.text = "Next Wave in: " + nextWaveCountdown.ToString("F2");
+		else
+			nextWaveCountdownTextMesh.text = "";
+
 	}
 }
