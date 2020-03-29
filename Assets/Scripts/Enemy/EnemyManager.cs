@@ -61,12 +61,14 @@ public class EnemyManager : MonoBehaviour
 				int randSpawnIndex = Random.Range(0, enemySpawns.Length);
 				GameObject newEnemyGO = Instantiate(enemyWaves[i].EnemyPrefab, enemySpawns[randSpawnIndex].position, Quaternion.identity, enemySpawnParent);
 				newEnemyGO.GetComponent<Enemy>().Health *= enemyWaves[i].EnemyHealthMultiplier;
+				newEnemyGO.GetComponent<Enemy>().MoveSpeed *= enemyWaves[i].EnemySpeedMultiplier;
 
 				enemiesInScene.Add(newEnemyGO);
 
 				currentEnemyHealthMultiplierScriptableFloat.Value = enemyWaves[i].EnemyHealthMultiplier;
 				yield return new WaitForSeconds(enemyWaves[i].EnemySpawnInterval);
 			}
+			HUD.Instance.NextWaveCountdown = timeBetweenWaves;
 			yield return new WaitForSeconds(timeBetweenWaves);
 		}
 		yield return null;
@@ -88,6 +90,7 @@ public struct EnemyWave
 	[SerializeField] private int enemyAmount;                   // How many enemies will spawn this wave.
 	[SerializeField] private float enemySpawnInterval;            // How many second inbetween spawns.
 	[SerializeField] private float enemyHealthMultiplier;       // Enemy Health multiplier. This normally increase each wave.
+	[SerializeField] private float enemySpeedMultiplier;        // Enemy Speed Multiplier.
 	#endregion
 
 	#region Properties
@@ -95,5 +98,6 @@ public struct EnemyWave
 	public int EnemyAmount { get => enemyAmount; set => enemyAmount = value; }
 	public float EnemySpawnInterval { get => enemySpawnInterval; set => enemySpawnInterval = value; }
 	public float EnemyHealthMultiplier { get => enemyHealthMultiplier; set => enemyHealthMultiplier = value; }
+	public float EnemySpeedMultiplier { get => enemySpeedMultiplier; set => enemySpeedMultiplier = value; }
 	#endregion
 }
