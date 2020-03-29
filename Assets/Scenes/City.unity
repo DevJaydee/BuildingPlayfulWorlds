@@ -1547,62 +1547,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 178199796}
   m_CullTransparentMesh: 0
---- !u!1 &202733001 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8441011749865866660, guid: c0b5c41684703844c8ca0ae1a70a65cd,
-    type: 3}
-  m_PrefabInstance: {fileID: 1744131685}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &202733002
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 202733001}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 479ddd07de17a754fb3db1805233db44, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  baseHealth: {fileID: 11400000, guid: 8d31973195e1d3949afcd1f58557cc59, type: 2}
-  playerPoints: {fileID: 11400000, guid: 8f8b15a4bfd64614cadab648c9a41e93, type: 2}
-  turretUpgradeKey: 101
-  turretsOnBase:
-  - {fileID: 8144665827636636074}
-  - {fileID: 1776179044}
-  - {fileID: 764674418}
-  - {fileID: 1753549609}
-  upgradeMultiplier: 1.5
-  costToUpgrade: {fileID: 0}
---- !u!1 &205909771 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8441011749865866660, guid: c0b5c41684703844c8ca0ae1a70a65cd,
-    type: 3}
-  m_PrefabInstance: {fileID: 1167712808}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &205909772
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 205909771}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 479ddd07de17a754fb3db1805233db44, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  baseHealth: {fileID: 11400000, guid: 8d31973195e1d3949afcd1f58557cc59, type: 2}
-  playerPoints: {fileID: 11400000, guid: 8f8b15a4bfd64614cadab648c9a41e93, type: 2}
-  turretUpgradeKey: 101
-  turretsOnBase:
-  - {fileID: 8144665827636636074}
-  - {fileID: 1776179044}
-  - {fileID: 764674418}
-  - {fileID: 1753549609}
-  upgradeMultiplier: 1.5
-  costToUpgrade: {fileID: 0}
 --- !u!1001 &231785002
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7919,34 +7863,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 945555438}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &956533234 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8441011749865866660, guid: c0b5c41684703844c8ca0ae1a70a65cd,
-    type: 3}
-  m_PrefabInstance: {fileID: 770330393}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &956533235
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 956533234}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 479ddd07de17a754fb3db1805233db44, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  baseHealth: {fileID: 11400000, guid: 8d31973195e1d3949afcd1f58557cc59, type: 2}
-  playerPoints: {fileID: 11400000, guid: 8f8b15a4bfd64614cadab648c9a41e93, type: 2}
-  turretUpgradeKey: 101
-  turretsOnBase:
-  - {fileID: 8144665827636636074}
-  - {fileID: 1776179044}
-  - {fileID: 764674418}
-  - {fileID: 1753549609}
-  upgradeMultiplier: 1.5
-  costToUpgrade: {fileID: 0}
 --- !u!1001 &961148208
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8197,34 +8113,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 966579345}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &978608296 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8441011749865866660, guid: c0b5c41684703844c8ca0ae1a70a65cd,
-    type: 3}
-  m_PrefabInstance: {fileID: 771878254}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &978608297
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 978608296}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 479ddd07de17a754fb3db1805233db44, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  baseHealth: {fileID: 11400000, guid: 8d31973195e1d3949afcd1f58557cc59, type: 2}
-  playerPoints: {fileID: 11400000, guid: 8f8b15a4bfd64614cadab648c9a41e93, type: 2}
-  turretUpgradeKey: 101
-  turretsOnBase:
-  - {fileID: 8144665827636636074}
-  - {fileID: 1776179044}
-  - {fileID: 764674418}
-  - {fileID: 1753549609}
-  upgradeMultiplier: 1.5
-  costToUpgrade: {fileID: 0}
 --- !u!1 &987423551
 GameObject:
   m_ObjectHideFlags: 0
@@ -10136,34 +10024,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1163401538}
   m_CullTransparentMesh: 0
---- !u!1 &1164367399 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8441011749865866660, guid: c0b5c41684703844c8ca0ae1a70a65cd,
-    type: 3}
-  m_PrefabInstance: {fileID: 581327589}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1164367400
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1164367399}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 479ddd07de17a754fb3db1805233db44, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  baseHealth: {fileID: 11400000, guid: 8d31973195e1d3949afcd1f58557cc59, type: 2}
-  playerPoints: {fileID: 11400000, guid: 8f8b15a4bfd64614cadab648c9a41e93, type: 2}
-  turretUpgradeKey: 101
-  turretsOnBase:
-  - {fileID: 8144665827636636074}
-  - {fileID: 1776179044}
-  - {fileID: 764674418}
-  - {fileID: 1753549609}
-  upgradeMultiplier: 1.5
-  costToUpgrade: {fileID: 0}
 --- !u!1 &1165640317
 GameObject:
   m_ObjectHideFlags: 0
@@ -15382,34 +15242,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1941668604}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1947159353 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8441011749865866660, guid: c0b5c41684703844c8ca0ae1a70a65cd,
-    type: 3}
-  m_PrefabInstance: {fileID: 906838333}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1947159354
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1947159353}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 479ddd07de17a754fb3db1805233db44, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  baseHealth: {fileID: 11400000, guid: 8d31973195e1d3949afcd1f58557cc59, type: 2}
-  playerPoints: {fileID: 11400000, guid: 8f8b15a4bfd64614cadab648c9a41e93, type: 2}
-  turretUpgradeKey: 101
-  turretsOnBase:
-  - {fileID: 8144665827636636074}
-  - {fileID: 1776179044}
-  - {fileID: 764674418}
-  - {fileID: 1753549609}
-  upgradeMultiplier: 1.5
-  costToUpgrade: {fileID: 0}
 --- !u!1001 &1969837546
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16278,34 +16110,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2043233828}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2045545767 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8441011749865866660, guid: c0b5c41684703844c8ca0ae1a70a65cd,
-    type: 3}
-  m_PrefabInstance: {fileID: 1216625769}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2045545768
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2045545767}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 479ddd07de17a754fb3db1805233db44, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  baseHealth: {fileID: 11400000, guid: 8d31973195e1d3949afcd1f58557cc59, type: 2}
-  playerPoints: {fileID: 11400000, guid: 8f8b15a4bfd64614cadab648c9a41e93, type: 2}
-  turretUpgradeKey: 101
-  turretsOnBase:
-  - {fileID: 8144665827636636074}
-  - {fileID: 1776179044}
-  - {fileID: 764674418}
-  - {fileID: 1753549609}
-  upgradeMultiplier: 1.5
-  costToUpgrade: {fileID: 0}
 --- !u!1001 &2047531008
 PrefabInstance:
   m_ObjectHideFlags: 0
