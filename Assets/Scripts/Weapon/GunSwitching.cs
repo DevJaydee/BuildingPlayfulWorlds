@@ -49,31 +49,31 @@ public class GunSwitching : MonoBehaviour
 		{
 			currentWeaponIndex = 1;
 		}
-		if(Input.GetKey(KeyCode.Alpha3) && transform.childCount >= 2)
+		if(Input.GetKey(KeyCode.Alpha3) && transform.childCount >= 3)
 		{
 			currentWeaponIndex = 2;
 		}
-		if(Input.GetKey(KeyCode.Alpha4) && transform.childCount >= 2)
+		if(Input.GetKey(KeyCode.Alpha4) && transform.childCount >= 4)
 		{
 			currentWeaponIndex = 3;
 		}
-		if(Input.GetKey(KeyCode.Alpha5) && transform.childCount >= 2)
+		if(Input.GetKey(KeyCode.Alpha5) && transform.childCount >= 5)
 		{
 			currentWeaponIndex = 4;
 		}
-		if(Input.GetKey(KeyCode.Alpha6) && transform.childCount >= 2)
+		if(Input.GetKey(KeyCode.Alpha6) && transform.childCount >= 6)
 		{
 			currentWeaponIndex = 5;
 		}
-		if(Input.GetKey(KeyCode.Alpha7) && transform.childCount >= 2)
+		if(Input.GetKey(KeyCode.Alpha7) && transform.childCount >= 7)
 		{
 			currentWeaponIndex = 6;
 		}
-		if(Input.GetKey(KeyCode.Alpha8) && transform.childCount >= 2)
+		if(Input.GetKey(KeyCode.Alpha8) && transform.childCount >= 8)
 		{
 			currentWeaponIndex = 7;
 		}
-		if(Input.GetKey(KeyCode.Alpha9) && transform.childCount >= 2)
+		if(Input.GetKey(KeyCode.Alpha9) && transform.childCount >= 9)
 		{
 			currentWeaponIndex = 8;
 		}
