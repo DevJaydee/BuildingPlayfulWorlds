@@ -12,7 +12,9 @@ public class Enemy : MonoBehaviour, IDamagable
 	[Space]
 	[SerializeField] private Transform target = default;    // The target for this enemy. The enemy will try to destroy the target.
 	[SerializeField] private float targetDetectionRange = 35f;  // How far the enemy can "sense" the target. This works through walls atm
-	[SerializeField] private float targetEngagementRange = 15f; // How far the enemy can shoot at the target
+	[SerializeField] private float targetEngagementRange = 1f; // How far the enemy can attack at the target
+	[SerializeField] private float targetEngagementSpeed = 1f; // How fast the enemy can attack at the target
+	[SerializeField] private float targetDamageAmount = 5f; // How much damage the enemy does.
 	[SerializeField] private float moveDestinationSetInterval = 0.1f;   // How often the enemy is told to move to the target position.
 	[SerializeField] private float moveSpeed = 2.5f;                    // Movementspeed of the enemy.
 	[Space]
@@ -31,23 +33,26 @@ public class Enemy : MonoBehaviour, IDamagable
 	[SerializeField] private StateMachine behaviourSM;
 	[SerializeField] private EnemyWalkingState walking;
 	[SerializeField] private EnemySearchingState searching;
-	[SerializeField] private EnemyShootingState shooting;
+	[SerializeField] private EnemyAttackingState attacking;
 	#endregion
 
-	#region Getters & Setters
+	#region Properties
 	public Transform Target { get => target; set => target = value; }
 
 	public float TargetDetectionRange { get => targetDetectionRange; set => targetDetectionRange = value; }
 	public float TargetEngagementRange { get => targetEngagementRange; set => targetEngagementRange = value; }
+	public float TargetEngagementSpeed { get => targetEngagementSpeed; set => targetEngagementSpeed = value; }
+	public float TargetDamageAmount { get => targetDamageAmount; set => targetDamageAmount = value; }
 	public float MoveDestinationSetInterval { get => moveDestinationSetInterval; set => moveDestinationSetInterval = value; }
 
 	public EnemyWalkingState Walking { get => walking; set => walking = value; }
 	public EnemySearchingState Searching { get => searching; set => searching = value; }
-	public EnemyShootingState Shooting { get => shooting; set => shooting = value; }
+	public EnemyAttackingState Attacking { get => attacking; set => attacking = value; }
 
 	public NavMeshAgent NavMeshAgent { get => navMeshAgent; set => navMeshAgent = value; }
 
 	public float Health { get => health; set => health = value; }
+	public float MoveSpeed { get => moveSpeed; set => moveSpeed = value; }
 	#endregion
 
 	#region MonoBehaviour Callbacks
@@ -59,7 +64,7 @@ public class Enemy : MonoBehaviour, IDamagable
 
 		searching = new EnemySearchingState(this, behaviourSM);
 		walking = new EnemyWalkingState(this, behaviourSM);
-		shooting = new EnemyShootingState(this, behaviourSM);
+		attacking = new EnemyAttackingState(this, behaviourSM);
 
 		timeBetweenAudio = Random.Range(0.5f, 3f);
 
