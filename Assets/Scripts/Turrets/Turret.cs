@@ -9,6 +9,7 @@ public class Turret : MonoBehaviour
 	[SerializeField] private LayerMask targetMask = default;            // Target mask. 
 	[SerializeField] private float rotationSpeed = default;             // How fast the turret rotates towards the target.
 	[SerializeField] private Transform rotationPivot = default;         // Pivot of the turret barel part.
+	[SerializeField] private float detectionRange = default;            // Minimum distance before the turrets see the enemies
 	[Space]
 	[SerializeField] private float gunShootingInterval = default;       // Shooting interval.
 	[SerializeField] private float gunDamage = default;                 // The damage it will deal... Duh.
@@ -18,8 +19,12 @@ public class Turret : MonoBehaviour
 	[SerializeField] private AudioSource source = default;              // Reference to the AudioSource component.
 
 	private bool canShoot = false;                                      // Get's set to true when the turret raycast hits the object.
-	#endregion
 
+	#endregion
+	public float RotationSpeed { get => rotationSpeed; set => rotationSpeed = value; }
+	public float GunShootingInterval { get => gunShootingInterval; set => gunShootingInterval = value; }
+	public float GunDamage { get => gunDamage; set => gunDamage = value; }
+	public float DetectionRange { get => detectionRange; set => detectionRange = value; }
 	#region Properties
 
 	#endregion
@@ -51,7 +56,7 @@ public class Turret : MonoBehaviour
 	/// </summary>
 	private void GetClosestTarget()
 	{
-		Collider[] colliders = Physics.OverlapSphere(transform.position, 1000, targetMask);
+		Collider[] colliders = Physics.OverlapSphere(transform.position, detectionRange, targetMask);
 		Collider nearestCollider = null;
 		float minSqrDistance = Mathf.Infinity;
 		for(int i = 0; i < colliders.Length; i++)
@@ -109,5 +114,8 @@ public class Turret : MonoBehaviour
 	{
 		Gizmos.color = Color.red;
 		Gizmos.DrawLine(muzzleTransform.position, muzzleTransform.forward * 1000);
+
+		Gizmos.color = Color.green;
+		Gizmos.DrawWireSphere(transform.position, detectionRange);
 	}
 }
