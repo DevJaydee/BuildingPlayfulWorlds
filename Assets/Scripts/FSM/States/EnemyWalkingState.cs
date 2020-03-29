@@ -32,7 +32,7 @@ public class EnemyWalkingState : EnemyGroundedState
 
 		if(Vector3.Distance(agent.transform.position, agent.Target.transform.position) < agent.TargetEngagementRange)
 		{
-			stateMachine.ChangeState(agent.Shooting);
+			stateMachine.ChangeState(agent.Attacking);
 		}
 		if(Vector3.Distance(agent.transform.position, agent.Target.transform.position) > agent.TargetDetectionRange)
 		{

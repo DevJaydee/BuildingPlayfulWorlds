@@ -52,7 +52,9 @@ MonoBehaviour:
     type: 3}
   target: {fileID: 0}
   targetDetectionRange: 10000
-  targetEngagementRange: 1
+  targetEngagementRange: 5
+  targetEngagementSpeed: 1
+  targetDamageAmount: 5
   moveDestinationSetInterval: 0.1
   moveSpeed: 4
   navMeshAgent: {fileID: 4287586785989638129}

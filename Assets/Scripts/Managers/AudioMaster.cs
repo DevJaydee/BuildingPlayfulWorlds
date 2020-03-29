@@ -30,14 +30,14 @@ public class AudioMaster : MonoBehaviour
 	#region Public Voids
 	public void PlayWalkSound(AudioSource source)
 	{
-		int i = Random.Range(0, groundWalkAudioClips.Length);
+		int i = Random.Range(0, groundWalkAudioClips.Length - 1);
 		source.clip = groundWalkAudioClips[i];
 		source.PlayOneShot(source.clip);
 	}
 
 	public void PlayZombieGrowl(AudioSource source)
 	{
-		int i = Random.Range(0, zombieGrowls.Length);
+		int i = Random.Range(0, zombieGrowls.Length - 1);
 		source.clip = zombieGrowls[i];
 		source.PlayOneShot(source.clip);
 
@@ -48,19 +48,19 @@ public class AudioMaster : MonoBehaviour
 		switch(type)
 		{
 			case GunType.Pistol:
-				source.PlayOneShot(PistolAudio[Random.Range(0, PistolAudio.Length)]);
+				source.PlayOneShot(PistolAudio[Random.Range(0, PistolAudio.Length - 1)]);
 				break;
 
 			case GunType.Rifle:
-				source.PlayOneShot(RifleAudio[Random.Range(0, PistolAudio.Length)]);
+				source.PlayOneShot(RifleAudio[Random.Range(0, PistolAudio.Length - 1)]);
 				break;
 
 			case GunType.Sniper:
-				source.PlayOneShot(SniperAudio[Random.Range(0, PistolAudio.Length)]);
+				source.PlayOneShot(SniperAudio[Random.Range(0, PistolAudio.Length - 1)]);
 				break;
 
 			case GunType.Silenced:
-				source.PlayOneShot(SilencedAudio[Random.Range(0, PistolAudio.Length)]);
+				source.PlayOneShot(SilencedAudio[Random.Range(0, PistolAudio.Length - 1)]);
 				break;
 
 			default:
