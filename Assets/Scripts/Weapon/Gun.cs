@@ -98,7 +98,8 @@ public class Gun : MonoBehaviour
 	public void Shoot()
 	{
 		ShowMuzzleFlash();
-		PlayAudio();
+		AudioMaster.Instance.PlayWeaponSound(source, gunType);
+
 
 		RaycastHit hit;
 		if(Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range, hitMask))
@@ -148,11 +149,5 @@ public class Gun : MonoBehaviour
 	{
 		GameObject muzzleFlashGO = Instantiate(muzzleFlash, muzzlePos.position, transform.rotation, transform);
 		Destroy(muzzleFlashGO, 0.1f);
-	}
-
-	private void PlayAudio()
-	{
-		AudioMaster.Instance.PlayWeaponSound(source, gunType);
-		source.PlayOneShot(source.clip);
 	}
 }
