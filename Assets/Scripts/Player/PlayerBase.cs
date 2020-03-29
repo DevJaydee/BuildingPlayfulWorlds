@@ -2,17 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerBase : MonoBehaviour
+public class PlayerBase : MonoBehaviour, IDamagable
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+	#region Variables
+	[SerializeField] private ScriptableFloat baseHealth = default;              // Reference to the playerbasehealth scriptableobject
+	#endregion
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+	#region Voids
+	public void Damage(float damageAmount)
+	{
+		baseHealth.Value -= damageAmount;
+		if(baseHealth.Value < -0)
+			GameManager.Instance.GameState = GameState.Gameover;
+	}
+	#endregion
 }
