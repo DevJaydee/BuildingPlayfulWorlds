@@ -101,6 +101,7 @@ public class Enemy : MonoBehaviour, IDamagable
 	{
 		Instantiate(onDeathParticles, transform.position, Quaternion.identity);
 		EnemyManager.Instance.RemoveFromList(gameObject);
+		PlayerBase.Instance.PlayerPoints.Value += 10;
 		Destroy(gameObject);
 	}
 	public void Damage(float damageAmount)
