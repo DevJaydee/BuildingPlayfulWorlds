@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8441011749865445764}
   - component: {fileID: 1319946180}
+  - component: {fileID: 659000861}
   m_Layer: 8
   m_Name: modularBuildings_018
   m_TagString: Target
@@ -42,12 +43,33 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 5, y: 5, z: 5}
+  m_Extents: {x: 6.5, y: 6.5, z: 6.5}
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
   m_Center: {x: -5, y: 0, z: -5}
   m_TimeToStationary: 0.5
+--- !u!114 &659000861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8441011749865866660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 479ddd07de17a754fb3db1805233db44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseHealth: {fileID: 11400000, guid: 8d31973195e1d3949afcd1f58557cc59, type: 2}
+  playerPoints: {fileID: 11400000, guid: 8f8b15a4bfd64614cadab648c9a41e93, type: 2}
+  turretUpgradeKey: 101
+  turretsOnBase:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  upgradeMultiplier: 1.5
 --- !u!1 &8441011749865866662
 GameObject:
   m_ObjectHideFlags: 0
