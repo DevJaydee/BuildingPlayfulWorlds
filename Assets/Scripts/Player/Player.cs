@@ -37,6 +37,7 @@ public class Player : MonoBehaviour
 	[Space]
 	[SerializeField] private AudioSource source = default;      // AudioSource Component.
 	private CharacterController charController = default;   // The Character controller variable.
+
 	[Space]
 	[SerializeField] private float staminaDrainSpeed = 20f; // How much stamina is drained each second when the run key is pressed.
 	[SerializeField] private bool canRun = true;
@@ -69,6 +70,9 @@ public class Player : MonoBehaviour
 			ThrowGrenade();
 
 		if(GameManager.Instance.GameState == GameState.Paused) source.Pause(); else source.UnPause();
+
+		if(Input.GetKeyDown(PlayerBase.Instance.TurretUpgradeKey))
+			PlayerBase.Instance.UpgradeTurrets();
 	}
 
 	private void Start()
