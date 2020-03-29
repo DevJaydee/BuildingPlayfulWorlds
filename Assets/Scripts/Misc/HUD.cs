@@ -25,6 +25,12 @@ public class HUD : MonoBehaviour
 	[Space]
 	[SerializeField] private Image playerBaseHealthImage = default;                 // Reference to the Player Base Health Image Component.
 	[SerializeField] private ScriptableFloat playerBaseHealthAmount = default;      // Reference to the Player Base Health Scriptable Float.
+	[Space]
+	[SerializeField] private TextMeshProUGUI playerPointsTextMesh = default;        // Reference to the Player Points Text Mesh.
+	[SerializeField] private ScriptableFloat playerPointsAmount = default;          // Reference to the Player Points Scriptable Float.
+	[Space]
+	[SerializeField] private TextMeshProUGUI turretUpgradeTextMesh = default;       // Reference to the Turret Upgrade Text Mesh.
+	[SerializeField] private ScriptableFloat turretUpgradeAmount = default;         // Reference to the Turret Upgrade amount Scriptable Object.
 
 	[Header("Enemy HUD Elements")]
 	[SerializeField] private TextMeshProUGUI currentEnemiesAliveTextMesh = default; // Reference to the Zombies alive text mesh.
@@ -37,7 +43,7 @@ public class HUD : MonoBehaviour
 	[SerializeField] private ScriptableFloat currentEnemyHealthMultiplierAmount = default;  // Reference to the current enemy health mulitplier Scriptablefloat.
 	[Space]
 	[SerializeField] private TextMeshProUGUI nextWaveCountdownTextMesh = default;               // Reference to the nextWaveCountdownTextMesh.
-	[SerializeField] private float nextWaveCountdown = default;									// Time until next wave.
+	[SerializeField] private float nextWaveCountdown = default;                                 // Time until next wave.
 	#endregion
 
 	#region Getters and Setters
@@ -71,6 +77,8 @@ public class HUD : MonoBehaviour
 			playerHealthImage.fillAmount = playerHealthAmount.Value / 100;
 			playerStaminaImage.fillAmount = playerStaminaAmount.Value / 100;
 			playerBaseHealthImage.fillAmount = playerBaseHealthAmount.Value / 100;
+			playerPointsTextMesh.text = "Points: \n" + playerPointsAmount.Value;
+			turretUpgradeTextMesh.text = "Upgrade turrets: " + turretUpgradeAmount.Value + "pts";
 
 			currentEnemiesAliveTextMesh.text = "Zombies Alive: " + currentEnemiesAliveAmount.Value;
 			currentEnemyWaveTextMesh.text = "Current Wave: " + currentEnemyWaveAmount.Value;
