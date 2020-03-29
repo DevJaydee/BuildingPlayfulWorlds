@@ -21,6 +21,9 @@ public class EnemySearchingState : EnemyGroundedState
 		base.Exit();
 	}
 
+	/// <summary>
+	/// Start Walking towards the target when target is in range
+	/// </summary>
 	public override void LogicUpdate()
 	{
 		base.LogicUpdate();

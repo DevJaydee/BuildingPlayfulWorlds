@@ -127,6 +127,10 @@ public class Player : MonoBehaviour
 		}
 	}
 
+	/// <summary>
+	/// Plays a walking sound when... walking. duh
+	/// </summary>
+	/// <returns></returns>
 	private IEnumerator PlayWalkAudio()
 	{
 		while(true)
@@ -143,18 +147,28 @@ public class Player : MonoBehaviour
 		}
 	}
 
+	/// <summary>
+	/// Slowly drain stamina when running
+	/// </summary>
 	private void DrainStamina()
 	{
 		stamina.Value -= staminaDrainSpeed * Time.deltaTime;
 		stamina.Value = Mathf.Clamp(stamina.Value, 0, stamina.StartingValue);
 	}
 
+	/// <summary>
+	/// Slowly Fills the Stamina when not running
+	/// </summary>
 	private void FillStamina()
 	{
 		stamina.Value += staminaDrainSpeed * Time.deltaTime;
 		stamina.Value = Mathf.Clamp(stamina.Value, 0, stamina.StartingValue);
 	}
 
+	/// <summary>
+	/// Starts the runcooldown when running for too long.
+	/// </summary>
+	/// <returns></returns>
 	private IEnumerator RunCooldown()
 	{
 		canRun = false;
@@ -215,6 +229,9 @@ public class Player : MonoBehaviour
 	#endregion
 
 	#region Grenade Throwing
+	/// <summary>
+	/// throws the grenade on input.
+	/// </summary>
 	private void ThrowGrenade()
 	{
 		if(grenadeCount.Value > 0)

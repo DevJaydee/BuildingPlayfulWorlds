@@ -74,6 +74,10 @@ public class EnemyManager : MonoBehaviour
 		yield return null;
 	}
 
+	/// <summary>
+	/// Public so the Enemy can call this and remove itself from the List when dead
+	/// </summary>
+	/// <param name="enemy"></param>
 	public void RemoveFromList(GameObject enemy)
 	{
 		enemiesInScene.Remove(enemy);

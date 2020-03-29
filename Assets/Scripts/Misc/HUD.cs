@@ -67,8 +67,12 @@ public class HUD : MonoBehaviour
 	{
 		WaveCountdown();
 	}
-	#endregion
 
+	#endregion
+	/// <summary>
+	/// Update the HUD on an interval. This is done because the HUD really doesn't have to be updated every frame.
+	/// </summary>
+	/// <returns></returns>
 	private IEnumerator UpdateHUD()
 	{
 		while(true)
@@ -88,6 +92,9 @@ public class HUD : MonoBehaviour
 		}
 	}
 
+	/// <summary>
+	/// Start Enemy Wave Countdown when the current wave is done
+	/// </summary>
 	public void WaveCountdown()
 	{
 		nextWaveCountdown -= Time.deltaTime;

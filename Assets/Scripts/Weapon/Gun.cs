@@ -53,6 +53,7 @@ public class Gun : MonoBehaviour
 
 	private void Update()
 	{
+		// Only updat when the gamestate is not gameover or paused/
 		if(GameManager.Instance.GameState == GameState.Playing)
 		{
 			if(gunState == GunState.Equiped)
@@ -82,6 +83,10 @@ public class Gun : MonoBehaviour
 		}
 	}
 
+	/// <summary>
+	/// When the weapon can be pickedup, we check for collision with the player
+	/// </summary>
+	/// <param name="other"></param>
 	private void OnTriggerEnter(Collider other)
 	{
 		if(other.CompareTag("Player"))
@@ -113,6 +118,10 @@ public class Gun : MonoBehaviour
 			StartCoroutine(Reload());
 	}
 
+	/// <summary>
+	/// Reload the weapon when the weapon is empty, or when Reload key is pressed.
+	/// </summary>
+	/// <returns></returns>
 	private IEnumerator Reload()
 	{
 		gunState = GunState.Reloading;
@@ -145,6 +154,9 @@ public class Gun : MonoBehaviour
 		Destroy(interactionCollider);
 	}
 
+	/// <summary>
+	/// Spawns a nice muzzleflash to show it actually shoots
+	/// </summary>
 	private void ShowMuzzleFlash()
 	{
 		GameObject muzzleFlashGO = Instantiate(muzzleFlash, muzzlePos.position, transform.rotation, transform);

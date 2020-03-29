@@ -26,6 +26,10 @@ public class EnemyWalkingState : EnemyGroundedState
 		base.Exit();
 	}
 
+	/// <summary>
+	/// Switch to Attack State when close enough to the Target.
+	/// Switch back to Searching when to far from target (Wil never happen, but just incase it does)
+	/// </summary>
 	public override void LogicUpdate()
 	{
 		base.LogicUpdate();

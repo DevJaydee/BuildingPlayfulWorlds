@@ -20,6 +20,10 @@ public class GunSwitching : MonoBehaviour
 		GetKeyInputToSwitchWeapons();
 	}
 
+	/// <summary>
+	/// Gets the mouse scroll input to switch between weapons.
+	/// Also as an added function. This also checks for the Keyboard input to switch weapons with your keyboard
+	/// </summary>
 	private void GetMouseScrollInput()
 	{
 		int previousWeaponIndex = currentWeaponIndex;
@@ -39,6 +43,7 @@ public class GunSwitching : MonoBehaviour
 				currentWeaponIndex--;
 		}
 
+		// Keyboard input
 		#region Keyboard weapon switching
 
 		if(Input.GetKey(KeyCode.Alpha1))

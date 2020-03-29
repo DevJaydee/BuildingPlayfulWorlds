@@ -26,12 +26,19 @@ public class Grenade : MonoBehaviour
 	#endregion
 
 	#region Private Voids & IEnumerators
+	/// <summary>
+	/// Starts the explosion timer
+	/// </summary>
+	/// <returns></returns>
 	private IEnumerator StartExplosionTimer()
 	{
 		yield return new WaitForSeconds(explosionTimer);
 		Explode();
 	}
 
+	/// <summary>
+	/// Explode the grenade after sometime.
+	/// </summary>
 	private void Explode()
 	{
 		Instantiate(explosionParticles, transform.position, Quaternion.identity);

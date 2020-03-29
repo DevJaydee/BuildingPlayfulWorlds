@@ -70,6 +70,9 @@ public class GameManager : MonoBehaviour
 		}
 	}
 
+	/// <summary>
+	/// Toggles Game Over 
+	/// </summary>
 	private void GameOver()
 	{
 		GameOverMenu.SetActive(true);
@@ -77,6 +80,9 @@ public class GameManager : MonoBehaviour
 		playerCamera.LockCursor(false);
 	}
 
+	/// <summary>
+	/// Get's all the required components
+	/// </summary>
 	private void GetComponents()
 	{
 		enemyTargetObjects = GameObject.FindGameObjectsWithTag("Target");
@@ -84,6 +90,9 @@ public class GameManager : MonoBehaviour
 		playerCamera = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<PlayerCamera>();
 	}
 
+	/// <summary>
+	/// Get all the weapons
+	/// </summary>
 	public void GetWeapons()
 	{
 		for(int i = 0; i < playerWeaponTransform.childCount; i++)
@@ -95,6 +104,10 @@ public class GameManager : MonoBehaviour
 		}
 	}
 
+	/// <summary>
+	/// Get the active weapon
+	/// </summary>
+	/// <returns></returns>
 	private IEnumerator GetActiveWeapon()
 	{
 		while(true)
@@ -111,6 +124,10 @@ public class GameManager : MonoBehaviour
 		}
 	}
 
+	/// <summary>
+	/// Updates the HUD (Yes this is a duplicate, This needs to be in the HUD class)
+	/// </summary>
+	/// <returns></returns>
 	private IEnumerator UpdateHUD()
 	{
 		while(true)
@@ -123,6 +140,9 @@ public class GameManager : MonoBehaviour
 	}
 
 	#region Menu Functions
+	/// <summary>
+	/// Triggers the pause menu and the cursor.
+	/// </summary>
 	public void TriggerPauseMenu()
 	{
 		pauseMenuEnabled = !pauseMenuEnabled;
@@ -134,6 +154,9 @@ public class GameManager : MonoBehaviour
 		playerCamera.LockCursor(!pauseMenuEnabled);
 	}
 
+	/// <summary>
+	/// Quit Button Behaviour
+	/// </summary>
 	public void QuitApplication()
 	{
 		Application.Quit();

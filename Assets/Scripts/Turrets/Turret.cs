@@ -71,6 +71,9 @@ public class Turret : MonoBehaviour
 		}
 	}
 
+	/// <summary>
+	/// Smoothly rotates the turret towards the target
+	/// </summary>
 	private void SmoothRotation()
 	{
 		Quaternion targetRotation = Quaternion.LookRotation(target.transform.position - transform.position);

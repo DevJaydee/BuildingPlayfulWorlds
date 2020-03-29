@@ -31,6 +31,10 @@ public class PlayerBase : MonoBehaviour, IDamagable
 	#endregion
 
 	#region Voids
+	/// <summary>
+	/// Implements the IDamagable Interface
+	/// </summary>
+	/// <param name="damageAmount"></param>
 	public void Damage(float damageAmount)
 	{
 		baseHealth.Value -= damageAmount;
@@ -38,9 +42,12 @@ public class PlayerBase : MonoBehaviour, IDamagable
 			GameManager.Instance.GameState = GameState.Gameover;
 	}
 
+	/// <summary>
+	/// Upgrade turret values when the player has enough points.
+	/// </summary>
 	public void UpgradeTurrets()
 	{
-		if(playerPoints.Value >= costToUpgrade.Value)
+		if(playerPoints.Value >= costToUpgrade.Value && costToUpgrade.Value < 800)
 		{
 			for(int i = 0; i < turretsOnBase.Length; i++)
 			{
@@ -48,8 +55,8 @@ public class PlayerBase : MonoBehaviour, IDamagable
 				turretsOnBase[i].GunShootingInterval -= upgradeMultiplier / 10;
 				turretsOnBase[i].GunDamage *= upgradeMultiplier;
 			}
-			costToUpgrade.Value += upgradeMultiplier;
 			playerPoints.Value -= costToUpgrade.Value;
+			costToUpgrade.Value *= upgradeMultiplier;
 		}
 	}
 	#endregion

@@ -28,6 +28,10 @@ public class AudioMaster : MonoBehaviour
 	#endregion
 
 	#region Public Voids
+	/// <summary>
+	/// Selects and plays a random walking audio clip
+	/// </summary>
+	/// <param name="source"></param>
 	public void PlayWalkSound(AudioSource source)
 	{
 		int i = Random.Range(0, groundWalkAudioClips.Length - 1);
@@ -35,6 +39,10 @@ public class AudioMaster : MonoBehaviour
 		source.PlayOneShot(source.clip);
 	}
 
+	/// <summary>
+	/// Selects and play a random zombiegrowls
+	/// </summary>
+	/// <param name="source"></param>
 	public void PlayZombieGrowl(AudioSource source)
 	{
 		int i = Random.Range(0, zombieGrowls.Length - 1);
@@ -43,6 +51,11 @@ public class AudioMaster : MonoBehaviour
 
 	}
 
+	/// <summary>
+	/// Selects and play a random audioclip depennding on the GunType.
+	/// </summary>
+	/// <param name="source"></param>
+	/// <param name="type"></param>
 	public void PlayWeaponSound(AudioSource source, GunType type)
 	{
 		switch(type)

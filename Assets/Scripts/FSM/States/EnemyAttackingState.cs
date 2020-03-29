@@ -31,6 +31,9 @@ public class EnemyAttackingState : EnemyGroundedState
 		Attack();
 	}
 
+	/// <summary>
+	/// Attack the target when close enough
+	/// </summary>
 	private void Attack()
 	{
 		attackCounter -= Time.deltaTime;

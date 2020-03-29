@@ -97,6 +97,9 @@ public class Enemy : MonoBehaviour, IDamagable
 	#endregion
 
 	#region Voids
+	/// <summary>
+	/// all the stuff that needs to happen when the enemy dies.
+	/// </summary>
 	public void OnDeathEvent()
 	{
 		Instantiate(onDeathParticles, transform.position, Quaternion.identity);
@@ -104,11 +107,19 @@ public class Enemy : MonoBehaviour, IDamagable
 		PlayerBase.Instance.PlayerPoints.Value += 10;
 		Destroy(gameObject);
 	}
+	/// <summary>
+	/// IDamagable Interface Implementation
+	/// </summary>
+	/// <param name="damageAmount"></param>
 	public void Damage(float damageAmount)
 	{
 		health -= damageAmount;
 	}
 
+	/// <summary>
+	/// Play walk audio when walking
+	/// </summary>
+	/// <returns></returns>
 	private IEnumerator PlayWalkAudio()
 	{
 		while(true)
@@ -125,6 +136,10 @@ public class Enemy : MonoBehaviour, IDamagable
 		}
 	}
 
+	/// <summary>
+	/// Play Growl at random intervals
+	/// </summary>
+	/// <returns></returns>
 	private IEnumerator PlayGrowlAudio()
 	{
 		while(true)
