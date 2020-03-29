@@ -11658,27 +11658,597 @@ MonoBehaviour:
   - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
       type: 3}
     enemyAmount: 20
-    enemySpawnInterval: 0.9
-    enemyHealthMultiplier: 1.2
-    enemySpeedMultiplier: 1.5
-  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
-      type: 3}
-    enemyAmount: 40
-    enemySpawnInterval: 0.8
+    enemySpawnInterval: 0.75
     enemyHealthMultiplier: 1.5
-    enemySpeedMultiplier: 1.5
-  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
-      type: 3}
-    enemyAmount: 80
-    enemySpawnInterval: 0.7
-    enemyHealthMultiplier: 2
     enemySpeedMultiplier: 2
   - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
       type: 3}
-    enemyAmount: 150
-    enemySpawnInterval: 0.6
-    enemyHealthMultiplier: 3
+    enemyAmount: 40
+    enemySpawnInterval: 0.65
+    enemyHealthMultiplier: 2
+    enemySpeedMultiplier: 2.25
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 80
+    enemySpawnInterval: 0.5
+    enemyHealthMultiplier: 2.5
     enemySpeedMultiplier: 2.5
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
+  - enemyPrefab: {fileID: 8532007717218147161, guid: e213022d55502e94aac94271a5731f81,
+      type: 3}
+    enemyAmount: 150
+    enemySpawnInterval: 0.3
+    enemyHealthMultiplier: 4
+    enemySpeedMultiplier: 3
   enemiesInScene: []
   currentEnemiesAliveScriptableFloat: {fileID: 11400000, guid: 444bfe5fa7cbf154ea20b436cc747dfe,
     type: 2}
